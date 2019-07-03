@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 10 Factory </title>
+        <script src="js/angular.min.js"></script>
+    </head>
+    <body ng-app="ngApp">
+        <div ng-controller="ctrl">
+            {{greetings}}
+        </div>
+        <!-- 
+        <script>
+           var ngApp = angular.module("ngApp",[]);
+
+            ngApp.factory("greetF", function(){
+            var func={};
+                func.sayHello = function(name){
+                    return "Hello, "+name;
+                    }
+                return func;
+            });
+    
+            ngApp.controller('ctrl', function($scope, greetF){
+                $scope.greetings = greetF.sayHello("Young")
+            });
+        </script>
+         -->
+        <script>
+           var ngApp = angular.module("ngApp",[]);
+
+            ngApp.factory("greetF", function(){
+            var obj={};
+                obj.sayHello = function(name){
+                    return "Hello, "+name;
+                    }
+                return obj;
+            });
+    
+            ngApp.controller('ctrl', function($scope, greetF){
+                $scope.greetings = greetF.sayHello("Young")
+            });
+
+        </script>
+    </body>
+</html>

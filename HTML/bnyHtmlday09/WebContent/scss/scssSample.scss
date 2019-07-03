@@ -1,0 +1,26 @@
+@import "new.scss";
+$attribute:height;
+.main_container{
+    margin:0;
+    padding:0;
+    width:100px;
+    #{$attribute}:100px;
+    background: {
+        color: aqua;
+        image:url("r.png")
+    }
+
+    nav{
+        padding:0;
+        ul{
+           display:inline-block;
+           &:hover{
+            box-shadow: 1px 1px 10px red;
+        }
+    }
+    
+    }
+    body.dark_thme & {
+        color:white;
+    }
+}

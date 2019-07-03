@@ -1,0 +1,90 @@
+<html lang="en">
+	<head>
+        <meta charset="utf-8">
+        <title>Executing a Function on Change Event in jQuery</title>
+        <style>
+            td.highlight{
+                background: yellow;
+                }
+        </style>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                //below 3 statements are adding options to the id vendors
+                //$("#vendors").append("<option>Vendor1</option>");
+                //$("#vendors").append("<option>Vendor2</option>");
+                //$("#vendors").append("<option>Vendor3</option>");
+
+                
+                //for(i=0;i<10;i++){
+                //    var vendorName = "BNYM"+i;
+                //    $("#vendors").append("<option>"+vendorName+"</option>");
+                //}
+
+                var arrayVendor = [];
+                for(i=0;i<=10;i++){
+                    arrayVendor[i] = "Vendor"+i;
+                    $("#vendors").append("<option>"+arrayVendor[i]+"</option>");
+                }
+                
+                $("#city").change(function(){
+                    var selectedOption = $(this).find(":selected").val();
+                    //.val is called chain, empty collection will throw an error
+                    alert("You have selected City- " + selectedOption);
+                });
+                $("#town").change(function(){
+                    var selectedOption = $(this).find(":selected").val();
+                    //.val is called chain, empty collection will throw an error
+                    alert("You have selected Town- " + selectedOption);
+                });
+
+                var tableData = [];
+                for(i=0;i<=10;i++){
+                    tableData[i] = "Vendor"+i;
+                    $("#table").append("<tr><td>"+i+"</td><td>"+tableData[i]+"</td></tr>");
+                }
+                $("td").hover(
+                    function(){$(this).addClass("highlight");}, 
+                    function(){$(this).removeClass("highlight");}
+                );
+            });
+        </script>
+	</head>
+	<body>
+	    <form>
+	        <label>City:</label>
+	        <select id="city">
+	            <option>London</option>
+	            <option>Paris</option>
+	            <option>New York</option>
+            </select>
+            <label>Vendors:</label>
+	        <select id="vendors">
+	            <!-- This does not have options we need to read it from array. -->
+            </select>
+            <label>Town:</label>
+	        <select id="town">
+	            <option>London1</option>
+	            <option>Paris1</option>
+	            <option>New York1</option>
+	        </select>
+        </form>
+        <table id="table" border="1">
+            <th>ID</th>
+            <th>Vendor Name</th>
+          <!--  <tr>
+                <td>Vendor1</td>
+                <td>Vendor2</td>
+            </tr>
+            <tr>
+                <td>Vendor3</td>
+                <td>Vendor4</td>
+            </tr>
+            <tr>                
+                <td>Vendor5</td>
+                <td>Vendor6</td>
+            </tr> -->
+        </table>
+		<p><strong>Note:</strong> Select any value from the dropdown select and see the result.</p>
+	</body>
+	</html>        

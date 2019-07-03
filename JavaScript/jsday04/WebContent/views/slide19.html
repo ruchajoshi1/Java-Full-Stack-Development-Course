@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 19</title>
+    </head>
+    <body>
+        <script>
+            var uniqueInterger = (function(){
+                var counter = 0;
+                return function(){ return counter++;};
+            }());
+            console.log(uniqueInterger())
+            console.log(uniqueInterger())
+            console.log(uniqueInterger())
+        </script>
+
+    </body>
+</html>

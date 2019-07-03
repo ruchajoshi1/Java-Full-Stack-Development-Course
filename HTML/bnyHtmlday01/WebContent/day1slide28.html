@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Register page</title>
+	</head>
+	<body>
+		<header>
+			<h1>Register Page</h1>
+			 <!-- Include a nav to link other pages -->
+			<nav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+				</ul>
+			</nav>
+		</header>
+		<form action="">
+			<label>First Name</label>
+			<input type="text" name="firstName" placeholder="Ener Your First Name"/>
+			<br>
+			<label>Last Name</label>
+			<input type="text" name="lastName" placeholder="Ener Your Last Name"/>
+			<br>
+		    <label for="email">Email</label>
+			<input type="email" name="email" placeholder="Ener your email"/>
+			<br>
+			<label for="pass">Password</label>
+			<input id="pass" type="password" name="password" placeholder="Enter your password"/>
+			<br>
+			<label for="pass">Confirm Password</label>
+			<input id="pass" type="password" name="password" placeholder="Confirm your password"/>
+			<br>
+			<label for="gender">Gender</label>
+			<input type="radio" name="gender" value="Female"/> Female
+			<input type="radio" name="gender" value="Male"/> Male
+			<br>
+			<label for="dob">Date Of Birth</label>
+			<input type="date" max="2019-1-30" name="dateofbirth" value="mm/dd/yyyy"/>
+			<br>
+			<label for="habits">Habits</label>
+			<input type="checkbox" name="habits1" value="sports"/> You like sports
+			<input type="checkbox" name="habits2" value="eat"/> You like to eat
+			<input type="checkbox" name="habits3" value="sleep"/> You like to sleep
+			<br>
+			<input type="submit" name="subm" value="Register" />
+			<br>
+		</form>
+	</body>
+</html>

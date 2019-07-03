@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 65 Form validation </title>
+        <script src="js/angular.min.js"></script>
+    </head>
+    <body ng-app="">
+
+        <p>Try leaving the name input field blank:</p>
+
+        <form name="myForm">
+        
+
+        <p>Name:
+        <input name="myName"  ng-model="myName" required>
+        <span ng-show="myForm.myName.$touched && myForm.myName.$invalid">
+            The name is required.
+        </span>
+        </p>
+    </form>
+    <p>We use the ng-show directive to only show the error message if the input field 
+        has been touche AND is empty
+    </p>
+     </body>
+</html>

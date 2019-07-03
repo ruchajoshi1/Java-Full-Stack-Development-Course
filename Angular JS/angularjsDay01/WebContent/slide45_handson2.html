@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 45 Hands-on </title>
+        <script src="js/angular.min.js"></script>
+    </head>
+<!-- Using function/controller -->
+<body ng-app="myApp">
+    <div ng-controller="myController1">
+         <h1 ng-mousemove="increase()">Input : {{inputNumber}}</h1> 
+         Input: <input type="number" ng-model="inputNumber"> 
+         <h2>{{counter1}}</h2>
+         <h2 ng-if="inputNumber>=0" style="color:green;">Count is increasing </h2>
+         <h2 ng-if="inputNumber<0" style="color:red;">Count is decreasing </h2>
+         <button ng-click="showMsg(msg)">Reset</button>
+    </div>
+    <script>
+        var ngApp = angular.module('myApp',[]);
+        ngApp.controller('myController1',function($scope){
+            $scope.counter1 = 0;
+            $scope.inputNumber = 1;
+            $scope.increase = function(){
+            $scope.counter1 = $scope.counter1 + $scope.inputNumber;
+            }
+            $scope.showMsg = function(){
+                $scope.counter1 = 0;
+                $scope.inputNumber = 1;
+            }
+        });
+    </script>
+</body>
+</html>

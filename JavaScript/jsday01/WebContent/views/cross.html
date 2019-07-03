@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Print diagonal shape</title>
+    </head>
+    <body>
+        <!--Write a program cross.html that asks the user to input the shape size, 
+            and prints a diagonal cross of that dimension.-->
+        <script>
+            var userWidth = prompt("Please enter shape size.");
+            var box="";
+
+            for(var j=0; j<userWidth; j++){
+                 for (var i = 0; i<userWidth; i++){
+                     if(i==j || (i+j)== (userWidth-1) ){
+                         box += "*";
+                     }else{box += " ";}
+                }                
+                box = box + "\n";
+            }
+            console.log("Shape: " + "\n");
+            console.log(box);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 22</title>
+    </head>
+    <body>
+        <!--Write a program valid.html, which asks the user to input an integer 
+            in the range 0 < n < 100. If the number is out of range, the program 
+            should keep asking to re-enter until a valid number is input.
+            After a valid value is obtained, print this number n squared.-->
+        <script>
+            var userInput = prompt("Please enter a number between 1 to 99");
+            
+            while(userInput<1 || userInput>99){
+                console.log("Please re-enter:" + userInput);
+                userInput = prompt("Please enter a number between 0 to 100");
+            }
+                console.log("Number squared is: " + (userInput*userInput));
+        </script>
+
+    </body>
+</html>

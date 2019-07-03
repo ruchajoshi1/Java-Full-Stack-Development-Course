@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Print diagonal shape</title>
+    </head>
+    <body>
+        <!--Write a program lower.html that prints the bottom-left half of a square,
+            given the side length.-->
+        <script>
+            var userLength = prompt("Please enter side lenght.");
+            var box="";
+
+            for(var j=0; j<userLength; j++){
+                 for (var i = 0; i<userLength; i++){
+                     if(i==j || i<j){
+                         box += "*";
+                     }else{box += "";}
+                }                
+                box = box + "\n";
+            }
+            console.log("Shape: " + "\n");
+            console.log(box);
+        </script>
+    </body>
+</html>

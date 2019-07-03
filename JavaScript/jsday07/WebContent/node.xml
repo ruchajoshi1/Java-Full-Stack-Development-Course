@@ -1,0 +1,21 @@
+<?xml version = "1.0"?>
+<Company>
+   <Employee category = "Technical">
+      <FirstName>Rick</FirstName>
+      <LastName>Sanchez</LastName>
+      <ContactNo>4262742553</ContactNo>
+      <Email>wubalubadubdub@pickle.com</Email>
+   </Employee>
+   <Employee category = "Non-Technical">
+      <FirstName>Morty</FirstName>
+      <LastName>Smith</LastName>
+      <ContactNo>1234667898</ContactNo>
+      <Email>OhJeez@pickle.com</Email>
+   </Employee>
+   <Employee category = "Management">
+      <FirstName>Summer</FirstName>
+      <LastName>Smith</LastName>
+      <ContactNo>1234562350</ContactNo>
+      <Email>whatever@pickle.com</Email>
+   </Employee>
+</Company>

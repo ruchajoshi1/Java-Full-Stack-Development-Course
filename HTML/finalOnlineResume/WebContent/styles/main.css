@@ -1,0 +1,101 @@
+@charset "ISO-8859-1";
+		/* style parameters for background body*/
+			.body{
+				background-color:black;
+			}
+		/* style parameters for main body*/
+			.main_div{
+				background-color:#262626;
+				width:1000px;
+				height:1100px;
+				padding:10px;
+				margin: 0px auto;
+				position:relative;
+			  }
+		/* style parameters for left top body*/
+			#left_top{
+				margin-left:20px;
+				margin-top:20px;
+				display:inline-block;
+				position:relative;
+			}
+		/* style parameters for right top body*/
+			#right_top{
+				margin-top:20px;
+				margin-right:20px;
+				/*display:inline-block;*/
+				float:right;
+				position:relative;
+			}
+		/* style parameters for text color white*/
+			.text_white{
+				color:white;
+			}
+		/* style parameters for text color gray*/
+			.text_gray{
+				color:gray;
+				text-indent:10px;
+			}
+		/* style parameters for text color blue*/
+			.text_blue{
+				color:DarkTurquoise ;
+			}
+		/* style parameters for left bottom body*/
+			#left_bottom{
+				width:600px;
+				padding:10px;
+				margin-left:20px;
+				margin-top:20px;
+				display:inline-block;
+				position:relative;
+			}
+		/* style parameters for right bottom aside body*/
+			aside{
+				width:300px;
+				padding:10px;
+				margin-top:20px;
+				margin-right:20px;
+				/* display:inline-block;*/
+				float:right;
+				position:relative;
+			}
+		/* style parameters for input box*/
+			.input_box{
+				width:600px; 
+				height:20px; 
+				background-color:gray;
+				display:block;
+				position:relative;
+			}
+		/* style parameters for button*/
+			.button{
+				width: 15px;
+				height: 15px;
+				border-radius: 10px;
+				display: inline-block;
+				position:relative;
+			}
+		/* style parameters for left column for language*/
+			.columnleft{
+				float: left;
+  				width: 20%;
+  				padding: 10px;
+  				height: 80px;
+  				position:relative;
+			}
+			/* style parameters for right column for language*/
+			.columnright{
+				float: left;
+  				width: 40%;
+  				padding: 10px;
+  				height: 80px;
+  				position:relative;
+			}
+			/* style parameters for progress bar*/
+			progress:before {
+				display:inline;
+				content:attr(value) "%";
+				width: 150px;
+				height: 8px;
+				color:white;
+			}  

@@ -1,0 +1,228 @@
+--Write a query to display each customer’s name (as “Customer Name”) alongside
+--the name of the employee who is responsible for that customer’s orders.
+--The employee name should be in a single “Sales Rep” column formatted as
+--“lastName, firstName”.  The output should be sorted alphabetically by customer
+--name.
+SELECT CUSTOMERNAME AS "CUSTOMER NAME",
+  E.LASTNAME
+  ||', '
+  ||E.FIRSTNAME AS "SALES REP"
+FROM CUSTOMERS C,
+  EMPLOYEES E
+WHERE C.SALESREPEMPLOYEENUMBER = E.EMPLOYEENUMBER
+ORDER BY C.CUSTOMERNAME ASC;
+--Determine which products are most popular with our customers.  For each
+--product, list the total quantity ordered along with the total sale generated
+--(total quantity ordered * priceEach) for that product.  The column headers
+--should be “Product Name”, “Total # Ordered” and “Total Sale”.
+--List the products by Total Sale descending.
+SELECT P.PRODUCTNAME                   AS "PRODUCT NAME",
+  SUM(O.QUANTITYORDERED)               AS "TOTAL # ORDERED",
+  SUM(O.QUANTITYORDERED * O.PRICEEACH) AS "TOTAL SALE"
+FROM PRODUCTS P,
+  ORDERDETAILS O
+WHERE P.PRODUCTCODE = O.PRODUCTCODE
+GROUP BY P.PRODUCTNAME
+ORDER BY "TOTAL SALE" DESC;
+--Write a query which lists order status and the # of orders with that status.
+--Column headers should be “Order Status” and “# Orders”.
+--Sort alphabetically by status.
+SELECT STATUS        AS "ORDER STATUS",
+  COUNT(ORDERNUMBER) AS "# ORDERS"
+FROM ORDERS
+GROUP BY STATUS
+ORDER BY STATUS ASC;
+--Write a query to list, for each product line, the total # of products sold
+--from that product line.  The first column should be “Product Line” and the
+--second should be “# Sold”.  Order by the second column descending.
+SELECT P.PRODUCTLINE     AS "PRODUCT LINE",
+  SUM(O.QUANTITYORDERED) AS "# SOLD"
+FROM PRODUCTS P,
+  ORDERDETAILS O
+WHERE P.PRODUCTCODE = O.PRODUCTCODE
+GROUP BY P.PRODUCTLINE
+ORDER BY SUM(O.QUANTITYORDERED) DESC;
+
+SELECT PRODUCTLINE     AS "PRODUCT LINE",
+  SUM(QUANTITYORDERED) AS "# SOLD"
+FROM PRODUCTS JOIN ORDERDETAILS USING(PRODUCTCODE)
+GROUP BY PRODUCTLINE
+ORDER BY 2 DESC;
+-- 2 IS SECOND COLUMN in order by
+
+--For each employee who represents customers, output the total # of orders that
+--employee’s customers have placed alongside the total sale amount of those
+--orders.  The employee name should be output as a single column named
+--“Sales Rep” formatted as “lastName, firstName”.  The second column should be
+--titled “# Orders” and the third should be “Total Sales”.   Sort the output by
+--Total Sales descending.  Only (and all) employees with the job title
+--‘Sales Rep’ should be included in the output, and if the employee made no
+--sales the Total Sales should display as “0.00”.
+SELECT LASTNAME
+  ||', '
+  ||FIRSTNAME AS "SALES REP"
+FROM EMPLOYEES
+WHERE JOBTITLE = 'Sales Rep';
+SELECT C.SALESREPEMPLOYEENUMBER        AS "SALES REP",
+  COUNT(O.ORDERNUMBER)                 AS "# ORDERS",
+  SUM(OD.QUANTITYORDERED*OD.PRICEEACH) AS "TOTAL SALES"
+FROM CUSTOMERS C,
+  ORDERS O,
+  ORDERDETAILS OD
+WHERE C.CUSTOMERNUMBER = O.CUSTOMERNUMBER
+AND O.ORDERNUMBER      = OD.ORDERNUMBER
+GROUP BY C.SALESREPEMPLOYEENUMBER;
+/*
+SELECT "SALES REP", NVL("# ORDERS",0) AS "# ORDERS",
+NVL("TOTAL SALES",0.00) AS "TOTAL SALES"
+FROM (SELECT LASTNAME
+||', '
+||FIRSTNAME AS "SALES REP",
+EMPLOYEENUMBER
+FROM EMPLOYEES
+WHERE JOBTITLE = 'Sales Rep') A LEFT JOIN
+(SELECT
+C.SALESREPEMPLOYEENUMBER,
+COUNT(O.ORDERNUMBER)     AS "# ORDERS",
+SUM(OD.QUANTITYORDERED*OD.PRICEEACH) AS "TOTAL SALES"
+FROM CUSTOMERS C,
+ORDERS O,
+ORDERDETAILS OD
+WHERE C.CUSTOMERNUMBER = O.CUSTOMERNUMBER
+AND O.ORDERNUMBER      = OD.ORDERNUMBER
+GROUP BY C.SALESREPEMPLOYEENUMBER) B
+ON A.EMPLOYEENUMBER = B.SALESREPEMPLOYEENUMBER
+ORDER BY COALESCE("TOTAL SALES",0.00) DESC;
+*/
+
+SELECT "SALES REP",
+  COALESCE("# ORDERS",0)            AS "# ORDERS",
+  NVL("TOTAL SALES",0.00) AS "TOTAL SALES"
+FROM
+  (SELECT LASTNAME
+    ||', '
+    ||FIRSTNAME AS "SALES REP",
+    EMPLOYEENUMBER
+  FROM EMPLOYEES
+  WHERE JOBTITLE = 'Sales Rep'
+  ) A
+LEFT JOIN
+  (SELECT C.SALESREPEMPLOYEENUMBER,
+    COUNT(O.ORDERNUMBER) AS "# ORDERS",
+    SUM(OD.SALES)        AS "TOTAL SALES"
+  FROM CUSTOMERS C,
+    ORDERS O,
+    (SELECT ORDERNUMBER,
+      SUM(QUANTITYORDERED*PRICEEACH) AS SALES
+    FROM ORDERDETAILS
+    GROUP BY ORDERNUMBER
+    ) OD
+  WHERE C.CUSTOMERNUMBER = O.CUSTOMERNUMBER
+  AND O.ORDERNUMBER      = OD.ORDERNUMBER
+  GROUP BY C.SALESREPEMPLOYEENUMBER
+  ) B
+ON A.EMPLOYEENUMBER = B.SALESREPEMPLOYEENUMBER
+ORDER BY COALESCE("TOTAL SALES",0.00) DESC;
+
+--other way of doing above query
+SELECT CONCAT(CONCAT(E.LASTNAME,', '),E.FIRSTNAME) AS "SALES REP",
+      COUNT(OD.ORDERNUMBER) AS "# ORDERS",
+      CASE 
+        WHEN COUNT(OD.ORDERNUMBER)=0 THEN TO_CHAR(0,'0.00')
+        ELSE TO_CHAR(SUM(OD.QUANTITYORDERED*OD.PRICEEACH),'999,999,999.99')
+        END AS "TOTAL SALES"
+FROM EMPLOYEES E LEFT JOIN CUSTOMERS C ON E.EMPLOYEENUMBER=C.SALESREPEMPLOYEENUMBER
+LEFT JOIN ORDERS O ON C.CUSTOMERNUMBER = O.CUSTOMERNUMBER
+LEFT JOIN ORDERDETAILS OD ON O.ORDERNUMBER = OD.ORDERNUMBER
+WHERE E.JOBTITLE = 'Sales Rep'
+GROUP BY E.LASTNAME, E.FIRSTNAME
+ORDER BY 3 DESC;
+
+--TO_CHAR(NVL(SUM(QUANTITYORDERED*PRICEEACH),0),'999,999.99')
+
+
+--example of case
+
+SELECT ORDERNUMBER, QUANTITYORDERED,
+  CASE
+    WHEN QUANTITYORDERED>50 THEN 'HIGH'
+    WHEN QUANTITYORDERED<=50 AND QUANTITYORDERED>30 THEN 'MEDIUM'
+    WHEN QUANTITYORDERED<=30 THEN 'LOW'
+    ELSE 'THE QUANTITY IS NULL'
+  END AS "SIZE OF QUANTITY"
+FROM ORDERDETAILS;   
+--
+SELECT * FROM CUSTOMERS WHERE SALESREPEMPLOYEENUMBER=1166;
+SELECT COUNT(*)
+FROM ORDERS
+WHERE CUSTOMERNUMBER IN (112, 205, 219, 239, 347, 475);
+SELECT COUNT(*) FROM ORDERS;
+--Your product team is requesting data to help them create a bar-chart of
+--monthly sales since the company’s inception.  Write a query to output the
+--month (January, February, etc.), 4-digit year, and total sales for that month.
+--The first column should be labeled ‘Month’, the second ‘Year’, and the third
+--should be ‘Payments Received’.  Values in the third column should be formatted
+--as numbers with two decimals – for example: 694,292.68.
+SELECT ORDERNUMBER,
+  SUM(QUANTITYORDERED*PRICEEACH) AS "SALES"
+FROM ORDERDETAILS
+GROUP BY ORDERNUMBER;
+SELECT TO_CHAR(ORDERDATE,'MONTH') AS "MONTH",
+  TO_CHAR(ORDERDATE,'YYYY')       AS "YEAR",
+  COUNT(ORDERNUMBER)
+FROM ORDERS
+GROUP BY TO_CHAR(ORDERDATE,'MONTH'),
+  TO_CHAR(ORDERDATE,'YYYY');
+
+SELECT C."MONTH",
+  C."YEAR",
+  TO_CHAR(ROUND(SUM(C.SALES),2),'999,999.99') AS "PAYMENTS RECEIVED"
+FROM
+  (SELECT TO_CHAR(A.ORDERDATE,'MONTH') AS "MONTH",
+    TO_CHAR(A.ORDERDATE,'YYYY')        AS "YEAR",
+    TO_CHAR(A.ORDERDATE,'MM')          AS "MMM",
+    A.ORDERNUMBER,
+    B.SALES
+  FROM ORDERS A
+  JOIN
+    (SELECT ORDERNUMBER,
+      SUM(QUANTITYORDERED*PRICEEACH) AS "SALES"
+    FROM ORDERDETAILS
+    GROUP BY ORDERNUMBER
+    ) B
+  ON A.ORDERNUMBER = B.ORDERNUMBER
+  ) C
+GROUP BY C."MONTH",
+  C."YEAR"
+ORDER BY C."YEAR",
+  MAX(C."MMM") ASC;
+SELECT * FROM ORDERS;
+
+--OTHER WAY OF ABOVE QUERY
+SELECT TO_CHAR(ORDERDATE,'MONTH') AS "MONTH",
+      TO_CHAR(ORDERDATE,'YYYY') "YEAR",
+      TO_CHAR(SUM(QUANTITYORDERED*PRICEEACH),'999,999.99') AS "PAYMENTS RECIEVED"
+FROM ORDERS JOIN ORDERDETAILS USING (ORDERNUMBER)
+GROUP BY TO_CHAR(ORDERDATE,'MONTH'),TO_CHAR(ORDERDATE,'YYYY');
+--order by to_char(orderdate,'yyyy'),to_char(orderdate,'mm');
+
+--use payments table for this query
+SELECT TO_CHAR(PAYMENTDATE,'MM') AS MONTH,
+       TO_CHAR(PAYMENTDATE,'YYYY') AS YEAR,
+       TO_CHAR(SUM(AMOUNT),'999,999,999.99') AS "PAYMENTS RECIEVED"
+FROM PAYMENTS
+GROUP BY TO_CHAR(PAYMENTDATE,'YYYY'),TO_CHAR(PAYMENTDATE,'MM')
+ORDER BY 2,1;
+
+--EXAMPLE OF EXTRACT
+SELECT TO_CHAR(TO_DATE(M,'MM'),'MONTH') AS MONTH,
+       Y AS YEAR,
+       TO_CHAR(P,'999,999,990.99') AS "PAYMENTS RECEIVED"
+FROM
+  (SELECT EXTRACT(MONTH FROM PAYMENTDATE) AS M,
+       EXTRACT(YEAR FROM PAYMENTDATE) AS Y,
+       SUM(AMOUNT) P
+    FROM PAYMENTS
+    GROUP BY EXTRACT(MONTH FROM PAYMENTDATE),EXTRACT(YEAR FROM PAYMENTDATE)
+    ORDER BY Y,M);
+       

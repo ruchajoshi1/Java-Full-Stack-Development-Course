@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>Slide 27 Modify Attributes</title>
+  </head>
+  <body>
+    <h1>Modifying Attributes</h1>
+     <ul>
+      <li>setAttribute(): Adds or updates value of a specified attribute</li>
+      <li>hasAttribute(): Returns a true or false boolean</li>
+      <li>getAttribute(): Returns the value of a specified attribute or null</li>
+      <li>removeAttribute(): Removes an attribute from an element</li>
+     </ul>
+     
+     <img id = "img">
+     <script>
+      var img = document.querySelector('#img');
+      img.setAttribute('src', 'fox.png' );
+      console.log(img.hasAttribute('src'));
+      console.log(img.getAttribute('src'));
+     </script>
+  </body>
+</html> 

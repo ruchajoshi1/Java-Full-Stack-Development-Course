@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Selectors Combinators + </title>
+		<style>
+			p + span{
+			background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p> Span that comes immediately after any p. Not this one.</p>
+			<span> Span that immediately after P.
+					This one fits in the description.
+			</span>
+		</div>
+		<div>
+			<div>
+				<span>Nope not this one </span>
+				<p>Paragraph 2</p>
+				<span>Yes this one fits the description.</span>
+			</div>
+		</div>
+	</body>
+</html>

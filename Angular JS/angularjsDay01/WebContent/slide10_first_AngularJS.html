@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>First Angular JS Application</title>
+        <script src="js/angular.min.js"></script>
+    </head>
+<body ng-app>
+    <h1>First AngularJS Application</h1>
+
+    Enter Numbers to Multiply:
+    <input type = "text" ng-model="number1"> * <input type="text" ng-model="number2">
+    = <span>{{number1*number2}}</span>
+    <br>
+    <br>
+    <!--to add numbers change type to number -->
+    Enter Numbers to add:
+    <input type = "number" ng-model="number1"> + <input type="number" ng-model="number2">
+    = <span>{{number1+number2}}</span>
+
+</body>
+</html>

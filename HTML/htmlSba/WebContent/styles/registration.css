@@ -1,0 +1,37 @@
+@charset "ISO-8859-1";
+/* style sheet for registration page */
+#form_container {
+    padding: 30px;
+    width:70%;
+	margin:0px auto;	
+}
+
+.input_container {
+	width: 100%;
+	display: flex;
+	margin-bottom: 15px;	
+}
+
+.icon {
+	padding: 7px;
+	background: white;
+	color: dodgerblue;
+	min-width: 30px;
+	text-align: center;
+	border: 0px;
+}
+
+.input_field {
+	width: 100%;
+	padding: 10px;
+	outline: none;
+	border: 0px;
+}
+
+.input_container:focus {
+	border: 2px;
+}
+.check_box{
+	color:white; 
+	font-size:12px;
+}

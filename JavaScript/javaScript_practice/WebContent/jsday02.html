@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Day 2 Practice</title>
+    </head>
+<body>
+    <script>
+        /*
+        //sliade 7
+        for(var i=0;i<1000;i++)
+        {
+            if(i%5==0){
+                continue;
+            }
+            console.log("Number:",i);
+        } 
+        */
+       /*
+       //slide 12 creation of arrays
+       var empty = [];
+       var arr1 = [1,2,3,'array'];
+       var base = 10;
+       var arr2 = [base+1,base+2];
+       var arr3 = [{key1:21},{key2:22},{key3:23}];
+       var arr4 = [,,];
+       console.log("empty",empty);//length 0
+       console.log("arr1",arr1);
+       console.log("arr2",arr2);//[11,12]
+       console.log("arr3",arr3);
+       console.log("arr4",arr4);//length 2
+       console.log("arr3",arr3[0]);//key1:21
+       console.log("arr3",arr3[0]["key1"]);//21
+       */
+      /*
+       //slide 17
+      var a = [];
+      a[0] = 12;
+      a.push("my name",22,33,44);
+      console.log("array",a);
+      delete a[2];//deletes data, empty space
+      console.log("array after delete",a);
+      a.pop();//premoves last element
+      console.log("array after pop",a);
+      a.shift();//removes 1st element
+      console.log("array after shift",a);
+      */
+     /*
+     //slide 35 array join and split
+     var a = [1,2,3];
+     var x = a.join();//concatenate array elemnts and create a string
+     console.log("x:",x);
+     var y = a.join("");
+     console.log("y:",y);
+     var z = a.join(" ");
+     console.log("z:",z);
+     console.log(typeof z);
+
+     var s = "d e r t y";
+     var sarray = s.split(" ");s
+     console.log("sarray:",sarray);//createa an array splitting string by space
+
+     //slide 36 reverse
+     console.log("reverse",a.reverse().join());//chages the same array
+     console.log("now a:",a);
+    */
+    /*
+    //slide 37 sort()
+    var a = [33,4,1111,222];
+    console.log("sorted a:", a.sort());//sort by alphabetical order
+    console.log("sort:",a.sort(function(a,b){return a-b;}));//sort using comparison function
+    //if  -ve value lower number, 0 no change, +ve value larger number
+    */
+    /*
+    //slide 38 slice()
+    var s = [1,2,3,4,56,7];
+    console.log("slice1:",s.slice(0,2));// [1,2] original array remains same
+    console.log("slice2:",s.slice(2));// [3,4,56,7]
+    console.log("slice3:",s.slice(1,-2));// [2,3,4]
+    console.log("slice4:",s.slice(-4,-2));// [3,4]
+    */
+    /*
+    //slide 39 splice() for inserting or removing - original array changes
+    //returns an array of deleted items
+    var a = [1,2,3,4,5,6,7,8];
+    console.log("splice:",a.splice(2,2));//[3,4] deleted these items
+    console.log("new a:",a);//[1,2,5,6,7,8];
+    console.log("add elements:",a.splice(2,0,"a","b",3,4));//empty as no items deleted
+    console.log("new a:",a);//[1,2,a,b,3,4,5,6,7,8]
+    */
+    /*
+    //slide 40 forEach
+    var data = [1,2,3,4,5];
+    var sum = 0;
+    data.forEach(function(value){sum += value;});
+    console.log("sum:",sum);
+    data.forEach(function(v,i,a){a[i]= v +1;});
+    console.log("data:",data);
+    */
+    /*
+    //slide 41 map() returns new array, no modification in old array
+   var s = [1,2,3];
+   console.log("map:",s.map(function(x){return x*x;}));//returns new array,
+   */
+   //slide 42 filter()
+   var s = [1,2,3,4,5,6,,7];
+   var smallvalues = s.filter(function(x){return x<3;});
+   console.log("smallvalues:",smallvalues);
+   console.log("original s:",s);
+   var temp = s.filter(function(x){return x != undefined && x != null;});
+   console.log("temp:",temp);
+  </script>
+
+</body>
+</html>

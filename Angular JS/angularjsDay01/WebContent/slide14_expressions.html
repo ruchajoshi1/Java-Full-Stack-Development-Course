@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 14 Expressions</title>
+        <script src="js/angular.min.js"></script>
+    </head>
+    <body>
+     <!--   <div ng-app>
+            {{"Hello"+"World"}}<br>
+            {{100 + 100}}<br>
+            {{true + false}}<br>  gives 1
+            {{10.2 + 10.2}}
+        </div>
+    -->
+
+    <div ng-app ng-init="greet='Hello World!';
+        amount=10000;rateOfInterest = 10.5; duration=10;
+        myArr = [100,200];
+        person={firstName:'Steve', lastName:'Jobs'};">
+
+        {{(amount * rateOfInterest * duration)/100}}<br>
+        {{myArr[1]}}<br>
+        {{person.firstName + " " + person.lastName}}
+    </div>
+    </body>
+</html>

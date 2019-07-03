@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Registration</title>
+        <!--Include the style sheets-->
+        <link rel="stylesheet"
+              type="text/css"
+              href="../styles/main.css"> 
+        <link rel="stylesheet"
+              type="text/css"
+              href="../styles/registration.css">
+    </head>
+    <body>
+        <!-- Main container -->
+        <div class="main_container">
+            <header id="top">
+                <!-- Logo and Title -->
+                <div class="logo">
+                    <img src="../images/logo.jpeg" alt="Bookstore Logo" width="125" height="125"/>
+                    <h1><center>RJ's Bookstore</center></h1>
+                </div>
+                <!-- Navigation Menu -->
+                <div class="navbar">
+                    <a href="../index.html">Home</a> 
+                    <a href="registration.html">Register</a> 
+                    <a href="login.html">Login</a> 
+                        <!-- Dropdown Menu -->   
+    			        <div class="dropdown">
+                            <button class="dropbutton">Book Catalog
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown_content">
+                                <a href="kidsBooks.html">Kids</a>
+                                <a href="fictionBooks.html">Fiction</a>
+                                <a href="nonFiction.html">Non Fiction</a>
+                            </div>
+                        </div>   
+                   <a href="contactPage.html">Contact Us</a>      
+                </div>
+            </header>
+            <div>
+                <!--Registration Form-->
+                <h3>Register Here</h3>
+                <form id="form_container" action="thankyou.html">
+                    <!-- User First name and last name with validation for only capital
+                         or small letters, required field -->
+                    <div class="input_container">
+                        <input class="input_field" type="text" pattern="^[a-zA-Z]+$"
+                            title="Only letters no spaces"
+                            placeholder="First Name" name="firstname" required>
+                        <span style="width:10px;"></span>
+                        <input class="input_field" type="text" pattern="^[a-zA-Z]+$"
+                            title="Only letters no spaces"
+                            placeholder="Last Name" name="lastname" required>
+                    </div>
+                    <!-- User name with validation of number/letter(capital or small)
+                         with length between 5 to 20, required field -->
+                    <div class="input_container">
+                        <i class="fa fa-user icon"></i>
+                        <input class="input_field" type="text" pattern="[A-Za-z0-9]{5,20}"
+                            title="must be 5-20 characters long and can contain numbers"
+                            placeholder="Username" name="username" required>
+                    </div>
+                    <!-- Password  field with validation with must have length beween 8 to 20 
+                         characters and must have at least 1 letter and 1 number, required field -->
+                    <div class="input_container">
+                        <i class="fa fa-key icon"></i>
+                        <input class="input_field" type="password" pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,20}"
+                            title="must be 8 - 20 characters long and must have letters, and numbers"
+                            placeholder="Choose your password" name="pwd" required>
+                    </div>
+                    <!-- Confirm Password field with same validation as password field with must have 
+                         length beween 8 to 20 characters and must have at least 1 letter and 1 number,
+                         required field -->
+                    <div class="input_container">
+                        <i class="fa fa-key icon"></i>
+                        <input class="input_field" type="password" pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,20}"
+                            title="must be 8 - 20 characters long and must have letters, and numbers"
+                            placeholder="Confirm password" name="confirmpwd" required>                            
+                    </div>
+                    <!--Enter email with vaildation having number letters, '@' sign and '.' 
+                        included in the format,required field -->
+                    <div class="input_container">
+                        <i class="fa fa-envelope icon"></i>
+                        <input class="input_field" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                            title="Must be in the email format"
+                            placeholder="Email" name="email" required>
+                    </div>
+                    <!--Enter Gender as a dropdown, required field-->
+                    <div class="input_container">
+                        <select class="input_field" required>
+                            <option value="" disabled selected>Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select><br><br>
+                    </div>
+                    <!--Enter Date of birth in the mm/dd/yyyy format, required field-->
+                    <div class="input_container">
+                        <input class="input_field" type="date" 
+                               title="Enter your date of birth." name="birthdate">
+                    </div>
+                    <!--Check box to accept terms and conditions, required field-->
+                    <div class="input_container">
+                        <input type="checkbox" required>
+                        <label><span class="check_box">I agree with terms and conditions</span></label>
+                    </div>
+                    <!-- Check box to opt for receiving news and offers, optional field-->
+                    <div class="input_container">
+                        <input type="checkbox">
+                        <label><span class="check_box">I want to receive the news and offers</span></label>
+                    </div>
+                    <input type="submit" value="Sign Up">				
+			    </form>                
+            </div>
+            <!-- Anchor to the top -->
+            <a href="#top" style="color:black;">Go To Top</a>
+            <p></p>
+            <!--Footer of a page -->
+            <footer>
+                &copy;Copyright 2019. All rights are reserved by RJ's Bookstore
+            </footer>
+        </div>
+    </body>
+</html>

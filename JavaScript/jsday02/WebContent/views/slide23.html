@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 23</title>
+    </head>
+    <body>
+        <!--Write a program print-interval.html that asks the user to input two
+            integers L and U(representing the lower and upper limits of the 
+            interval), and print out all integers in the range L ≤ i < U separated 
+            by spaces. Notice that we include the lower limit, but exclude the 
+            upper limit.-->
+            <script>
+                var L = 0;
+                var U = 0;
+                var temp = " ";
+                L = prompt("Please enter lower limit:");
+                U = prompt("Please enter upper limit:");
+                for(let i=L; i<U; i++){
+                    temp += i + " ";
+                }
+                console.log(temp);
+            </script>
+
+    </body>
+</html>

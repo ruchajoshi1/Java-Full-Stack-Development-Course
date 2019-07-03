@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Form Slide 25</title>
+	</head>
+	<body>
+		<header>
+			<h1>Welcome to day 02</h1>
+			<!-- Include a nav to link other pages -->
+			<nav>
+				<ul>
+					<li><a href="slide19Table.html">Table</a></li>
+					<li><a href="index.html">Home</a></li>
+				</ul>
+			</nav>
+		</header>
+		<!--  <form action="" method="post"> to hide the information in the url-->
+		<form>
+			<!-- Include the profile form here -->
+			<label>Full Name</label>
+			<input type="text" name="fullName" required/>
+			<br>
+			<label for="email">Email</label>
+			<input type="email" name="email"/>
+			<br>
+			<label for="pass">Password</label>
+			<input id="pass" type="password" name="password" disabled/>
+			<br>
+			<label for="quant">Quantity</label>
+			<input id="quant" type="number" name="quantity" value="0" min="1" max="6"/>
+			<br>
+			<label for="dob">DOB</label>
+			<input type="date" min="2017-11-30" name="dateofbirth"/>
+			<br>
+			<label for="hour">Hour</label>
+			<input id="hour" type="time" name="hour"/>
+			<br>
+			<label for="C">Favorite Color</label>
+			<input id="C" type="color" name="color" value="#ff00aa"/>
+			<br>
+			<input type="submit" name="subm" value="Save" />
+			<br>
+		</form>
+		<footer>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Print Checkerboard</title>
+    </head>
+    <body>
+        <!--Write a program checkerboard.html that asks the user to input width and
+             height and prints a rectangular checkerboard of the requested size 
+             using asterisks and spaces (alternating).-->
+        <script>
+             var userWidth = prompt("Please enter width of the box.");
+             var userHeight = prompt("Please enter height of the box.");  
+             var box = "";  
+
+             for(var j=0; j<userHeight; j++){
+                 for (var i = 0; i<userWidth; i++){
+                     if((i+j)%2==0){
+                         box += "*";
+                     }else{ box += " ";}
+                }                
+                box = box + "\n";
+            }
+            console.log("Shape: " + "\n");
+            console.log(box);
+        </script>
+
+    </body>
+</html>

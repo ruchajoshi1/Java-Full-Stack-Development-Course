@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 43 Events </title>
+        <script src="js/angular.min.js"></script>
+    </head>
+<body ng-app="myNgApp">
+     <div ng-controller="myController">
+       Enter Password: <input type="password" ng-model="password"> <br>
+
+       <button ng-click="DisplayMessage(password)">Show Password</button>
+    </div>
+    <script>
+        var ngApp = angular.module('myNgApp',[]);
+        ngApp.controller('myController',function($scope,$window){
+           $scope.password="Default";
+           $scope.DisplayMessage = function(value){               
+               $window.alert(value);
+           }
+        });
+    </script>    
+</body>
+</html>

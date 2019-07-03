@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 49 Currency Filter </title>
+        <script src="js/angular.min.js"></script>
+    </head>
+    <body ng-app="myApp">
+        <div ng-controller="myController">
+            <select ng-model="SortOrder">
+                <option value="+name">Name (asc)</option>
+                <option value="-name">Name (dec)</option>
+                <option value="+age">Age (asc)</option>
+                <option value="-age">Age (dec)</option>
+            </select>
+            <ul ng-repeat="person in persons | orderBy:SortOrder">
+                <li>{{person.name}} - {{person.age}}</li>
+            </ul>
+        </div>
+       <script>
+           var myApp = angular.module('myApp',[]);
+
+           myApp.controller("myController",function($scope){
+
+            $scope.persons = [{name:'John', age:'20'},
+                              {name:'Mark', age:'25'},
+                              {name:'Mike', age:'30'},
+                              {name:'Maria', age:'40'},
+                              {name:'Anna', age:'50'},
+                              {name:'Steve', age:'35'} ]
+
+                $scope.SortOrder = '+name';
+           })
+       </script>
+    </body>
+</html>

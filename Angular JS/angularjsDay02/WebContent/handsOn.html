@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Hands On</title>
+        <script src="js/angular.min.js"></script>
+    </head>
+    <body ng-app="DemoApp">
+        <div ng-controller="DemoController">
+            <!-- The repositoryfrom the controller: {{repos}} -->
+            Enter name to search:
+            <input type="text" ng-model="myName">
+            <ul>
+                <li ng-repeat="s in students | orderBy:'Name'| filter:{Name:myName}">
+                    {{s.ID}} - {{s.Name}} - {{s.Email}}
+                </li>
+            </ul>
+        </div>
+        <script>
+            var app= angular.module("DemoApp",[])
+            app.controller("DemoController",function($scope,$http){
+                $http.get('https://raw.githubusercontent.com/ahmshahparan/BNY01/master/plist.json?token=AQkwHzRXjf_IKMDFZTA8jEl2Lni7cq-cks5ck-p6wA%3D%3D')
+                .then(function(response){
+                //$scope.repos = response;//prints entire object
+                //$scope.repos = response.data;//prints data object
+                $scope.students = response.data.records;//prints records array
+                }, function(resonse){
+                    alert("Error!!");
+                })
+            });
+        </script>
+    </body>
+</html>

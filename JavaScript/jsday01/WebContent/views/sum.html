@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Print Sum</title>
+    </head>
+    <body>
+        <!--Write a program sum.html that reads a sequence of integers from prompt
+            method, and reports their sum.-->
+        <script>
+            //var data=[];
+            var sum = 0;
+            var userWidth = prompt("Please enter integers to find the sum.");
+            var arr= userWidth.split(" ");
+            //console.log(arr);
+            
+            arr.forEach(function(value){sum += parseInt(value);});
+            
+            console.log("Sum is: " + sum);
+
+            /*for(var i=0;i<userWidth.length;i++){
+                if(userWidth[i] == " "){
+                //console.log("user input:" + userWidth[i]);
+                //data[i] = userWidth[i]+",";
+                data[i] = 0;
+                } else if (i==(userWidth.length-1)){
+                    data[i] = userWidth[i];
+                }else{data[i] = userWidth[i];}
+                //console.log("data: " + data[i]);
+                sum += parseInt(data[i]);
+            }*/
+            //console.log("data is: " + data);
+            //var arr= userWidth.toString();
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+      <head>
+            <meta charset="ISO-8859-1">
+            <title>CSS Position Property Slide 16</title>
+            <style>
+                  .absolute {
+                        width: 100px;
+                        height: 200px;
+                        left: 150px;
+                        background-color: red;
+                        position: absolute;     
+                  }
+                  
+                  .relative{
+                        width: 100px;
+                        height: 200px;
+                        background-color: green;
+                        position: relative;
+                  }
+                  
+                  .fixed {
+                        width: 100px;
+                        height: 200px;
+                        background-color: yellow;
+                        position: fixed;
+                        left: 150px;
+                  }
+            </style>
+      </head>
+      <body>
+            <div class="container">
+            A peak of JQuery
+            </div>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+            </script>
+            
+            <script>
+                  for(var i = 1; i <= 20; i++) {
+                        if (i == 1) {
+                              $(".container").append("<div class='absolute'>" +
+                                                                  "Inner Div " + i +
+                                                                  "</div>");
+                        } else if (i == 5) {
+                              $(".container").append("<div class='fixed'>" +
+                                          "Inner Div " + i +
+                                          "</div>");                          
+                        } else if (i % 2 == 0) {      
+                              $(".container").append("<div class='relative'>" +
+                                          "Inner Div " + i +
+                                          "</div>");  
+                              
+                        }
+                  }
+            
+            </script>
+      </body>
+</html>

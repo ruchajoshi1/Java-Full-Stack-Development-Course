@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 25 ng-if ng-readonly ng-disabled</title>
+        <script src="js/angular.min.js"></script>
+        <style>
+            div{
+                width: 100%;
+                height:50px;
+                display: block;
+                margin: 15px 0 0 10px;
+            }
+        </style>
+    </head>
+    <body ng-app ng-init="checked=true">
+        Click Me: <input type="checkbox" ng-model="checked"> <br>
+        <div>
+            New: <input ng-if="checked" type="text" value="This is open to edit.">
+        </div>
+        <div>
+            Read-only: <input ng-readonly="checked" type="text" value="This is read-only.">
+        </div>
+        <div>
+            Disabled: <input ng-disabled="checked" type="text" value="This is disabled.">
+        </div>
+    </body>
+</html>

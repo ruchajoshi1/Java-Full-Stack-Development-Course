@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 16 location </title>
+        <script src="js/angular.min.js"></script>
+    </head>
+    <body ng-app="ngApp">
+        <div ng-controller="customerCtrl">
+            {{myUrl}}
+        </div>
+      
+        <script>
+           //create a module
+            var ngApp = angular.module("ngApp", []);
+              
+            ngApp.controller('customerCtrl', function($scope, $location) {
+            $scope.myUrl = $location.absUrl();
+            });
+
+        </script>
+       
+    </body>
+</html>

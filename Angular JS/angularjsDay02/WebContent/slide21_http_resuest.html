@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Slide 21 Get Data From HTML</title>
+        <script
+            src="js/angular.min.js"></script>
+    </head>
+<body ng-app="myNgApp">
+	<div ng-controller="myController">
+		<h2>{{message}}</h2>
+		<p>HTML Response: {{response}}</p>
+		<p>HTML Data: {{myData}}</p>
+		<p>HTTP Status Code: {{statusval}}</p>
+		<p>HTTP Header: {{headers}}</p>
+		<p>HTTP Config: {{config}}</p>
+	</div>
+	<script>
+        var ngApp = angular.module('myNgApp', []);
+        ngApp.controller('myController', function ($scope, $http) {
+            $scope.message = "Data coming from sampledata.html!";   
+            //$http.get("sampleData.html").then(function(httpResponse) {
+            $http.get("http://rest-service.guides.spring.io/greeting").then(function(httpResponse) {
+              $scope.response = httpResponse;
+              $scope.myData = httpResponse.data;
+              $scope.statusval = httpResponse.status;
+              $scope.headers = httpResponse.headers();
+              $scope.config = httpResponse.config;
+            });
+        });
+    </script>
+</body>
+</html>

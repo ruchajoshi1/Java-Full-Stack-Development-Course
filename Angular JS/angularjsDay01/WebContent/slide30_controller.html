@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 30 Controller</title>
+        <script src="js/angular.min.js"></script>
+    </head>
+<body ng-app="myNgApp">
+    <div ng-controller="myController">
+        This message is from controller: {{message}}<br>
+        <div ng-repeat="l in language">{{l}}</div>
+    </div>
+    <script>
+        var ngApp = angular.module('myNgApp',[]);
+        ngApp.controller('myController',function($scope){
+            $scope.message = "Hello Developers!";
+            $scope.language = ['java','python','javascript'];
+            $scope.number = [1,2,3,4,5]
+            //$scope.pair = []
+        });
+    </script>    
+</body>
+</html>

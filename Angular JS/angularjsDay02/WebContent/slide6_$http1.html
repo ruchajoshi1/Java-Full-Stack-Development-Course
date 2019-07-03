@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 6 dependencies</title>
+        <script src="js/angular.min.js"></script>
+    </head>
+    <body ng-app="DemoApp">
+        <div ng-controller="DemoController">
+            The repositoryfrom the controller: {{repos}}
+        </div>
+        <script>
+            var app= angular.module("DemoApp",[])
+            app.controller("DemoController",function($scope,$http){
+                $http.get('https://api.github.com/users/angular/repos')
+                .then(function(response){
+                    //$scope.repos = response.data;//prints data array
+                    $scope.repos = response;//prints entire object
+                })
+            });
+        </script>
+    </body>
+</html>

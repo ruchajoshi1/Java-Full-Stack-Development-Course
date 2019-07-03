@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 35 Controller</title>
+        <script src="js/angular.min.js"></script>
+    </head>
+<body ng-app="myNgApp">
+    <h2>Student Information:</h2>
+    <div ng-controller="myController">
+        <!--You can not have ng-repeat with controller div-->
+        <div ng-repeat="name in students">
+            First Name: {{name.firstName}} <br>
+            Last Name: {{name.lastName}}
+            <hr>
+        </div> 
+        
+        <!-- First Name: {{students.firstName}} <br>
+        Last Name: {{students.lastName}} -->
+    </div>
+    <script>
+        var ngApp = angular.module('myNgApp',[]);
+        ngApp.controller('myController',function($scope){
+           //$scope.student = {firstName: 'Albert', lastName: 'Einstein'};
+            $scope.students = [{firstName: 'Albert', lastName: 'Einstein'},
+                               {firstName: 'Rucha', lastName: 'Joshi'}];
+        });
+    </script>    
+</body>
+</html>

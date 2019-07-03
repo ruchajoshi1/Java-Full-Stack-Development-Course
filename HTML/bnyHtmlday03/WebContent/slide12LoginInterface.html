@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Login Interface</title>
+		<!-- CSS Style -->
+		<style>
+			/* main container - gree */
+			body{
+				background-color:greenyellow;
+								}
+			/* icon container */
+			#icon_container{
+				width:50px;
+				height:50px;
+				background-color:blue;
+				border-radius:100%;
+				display:inline-block;
+				margin-top:-20px;
+			}
+			/* gray container */
+			#gray_container{
+				background-color:white;
+				width:300px;
+				height:350px;
+				margin:50px auto;
+				float:center;
+				text-align:center;
+			}
+			/* form container */
+			#form_container{
+				width:200px;
+				height:200px;
+				margin-top:10px;
+				margin-left:50px;
+				text-align:center;
+			}
+			/* Submit button */
+			#submitButton{
+				background-color:lightblue;
+			}
+			/* input text style */
+			.inputText{
+				width:110px;
+				height:30px;
+				margin:10px;
+				text-align:center;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			
+		</header>
+		<!-- Content Section -->
+		
+			<!-- gray container -->
+			<div id="gray_container">
+				<!-- icon container -->
+				<div id="icon_container">
+					
+				</div>
+				<!-- Form container -->
+				<h2>User Login</h2>
+				<form id="form_container">
+					
+					<input class="inputText" type="text" name="userId" placeholder="Username"/>
+					<input class="inputText" id="pass" type="password" name="password" placeholder="Password"/>
+					<input class="inputText" id="submitButton" type="submit" name="submit" value="LOGIN" value="#6495ED" />
+					
+				</form>
+				<a href="index.html">Forgot Password?</a>
+			</div>
+		
+	</body>
+</html>

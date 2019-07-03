@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Contact Us</title>
+        <link rel="stylesheet"
+              type="text/css"
+              href="../styles/main.css">
+        <link rel="stylesheet"
+              type="text/css"
+              href="../scss/form.css">
+    </head>
+    <body>
+        <!-- Main container -->
+        <div class="main_container">
+            <header id="top">
+                <!-- Logo and Title -->
+                <div class="logo">
+                    <img src="../images/logo.jpg" alt="Toystore Logo" width="125" height="125"/>
+                    <h1><center>Toystore</center></h1>
+                </div>
+                <!-- Navigation Menu -->
+                <div class="navbar">
+                    <a href="../index.html">Home</a> 
+                    <a href="../views/registration.html">Register</a> 
+                    <a href="../views/login.html">Login</a> 
+                        <!-- Dropdown Menu -->   
+    			        <div class="dropdown">
+                            <button class="dropbutton">Toys Catalog
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown_content">
+                                <a href="../views/ageGroup1.html">Age 0-3</a>
+                                <a href="../views/ageGroup2.html">Age 4-6</a>
+                                <a href="../views/ageGroup3.html">Age 7-10</a>
+                            </div>
+                        </div> 
+                   <a href="../views/aboutUs.html">About Us</a>  
+                   <a href="../views/contactPage.html">Contact Us</a>      
+                </div>
+            </header>
+            <div>
+                <!--Contact Form -->
+                <h3>Any questions or concerns? Please let us know here.</h3>
+                <form id="form_container" action="thankyou_contact.html">
+                    <!-- Ask user for first name and Last name with validation 
+                        of having only letters-->
+                    <div class="input_container">
+                        <input class="input_field" type="text" pattern="^[a-zA-Z]+$"
+                            title="Only letters no spaces"
+                            placeholder="First Name" name="firstname" required>
+                        <span style="width:10px;"></span>
+                        <input class="input_field" type="text" pattern="^[a-zA-Z]+$"
+                            title="Only letters no spaces"
+                            placeholder="Last Name" name="lastname" required>
+                    </div>
+                    <!--Ask user fro email ID to contact back, with email validation -->
+                    <div class="input_container">
+                        <i class="fa fa-envelope icon"></i>
+                        <input class="input_field" type="email" 
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                            title="Must be in the email format"
+                            placeholder="Email" name="email" required>
+                    </div>
+                    <!--text area to enter a message from user. -->
+                    <div class="input_container">
+                        <textarea class="input_field" name="messege"  
+                                  rows="10" required>Please enter your message here...
+                        </textarea>
+                    </div>
+                    <!-- submit button -->
+                    <input type="submit" value="Submit">				
+			    </form>
+            </div>
+            <!-- Anchor to the top -->
+            <a href="#top" style="color:black;">Go To Top</a>
+            <p></p>
+            <!--Footer of a page -->
+            <footer>
+                &copy;Copyright 2019. All rights are reserved by Toystore
+            </footer>
+        </div>
+    </body>
+</html>

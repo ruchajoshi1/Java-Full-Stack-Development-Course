@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 22 Closures - Private Variables</title>
+    </head>
+    <body>
+        <script>
+            //getter and setter methods
+            var customErr = new Error("count can only be set to a larger value"); 
+            function counter(n){
+                return{
+                    get count() {return n++;},
+                    set count(m) {
+                        if (m>=n) n=m;
+                        else throw customErr;
+                        //else throw Error("count can only be set to a larger value");
+                    }
+                };
+            }    
+            try{
+            var c= counter(1000);
+            console.log(c.count);
+            console.log(c.count);
+            c.count = 2000;
+            console.log(c.count);
+            c.count = 2000;
+            //c.count = 2001;
+            console.log(c.count);
+            }
+            catch(error){
+                console.log(error);
+            }
+        </script>
+    </body>
+</html>

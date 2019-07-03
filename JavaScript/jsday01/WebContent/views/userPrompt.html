@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Use of prompt</title>
+    </head>
+    <body>
+        <script>
+            var userInput = prompt("Enter your name");
+            alert("hello");// does not return
+            var answer = confirm("Do you want to continue?");//returns boolean
+            if(answer){
+                console.log("now continue");
+            }else{
+                console.log("bye.");
+            }
+            console.log(userInput);
+        </script>
+
+    </body>
+</html>

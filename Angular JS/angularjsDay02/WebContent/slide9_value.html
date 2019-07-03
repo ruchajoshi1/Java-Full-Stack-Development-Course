@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 9 value </title>
+        <script src="js/angular.min.js"></script>
+    </head>
+    <body ng-app="ngApp">
+        <div ng-controller="ctrl">
+            {{uName}}
+        </div>
+      
+        <script>
+           //create a module
+            var ngApp = angular.module("ngApp", []);
+
+            //create VALUE object as "userName" and assign a value.
+            ngApp.value("userName", "ywbaek");
+                
+            //inject the VALUE in the controller using its name "userName"
+            ngApp.controller('ctrl', function($scope, userName) {
+            $scope.uName = userName;
+            });
+
+        </script>
+       
+    </body>
+</html>

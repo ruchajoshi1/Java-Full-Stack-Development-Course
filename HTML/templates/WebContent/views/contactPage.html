@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Contact Us</title>
+		<link rel="stylesheet"
+			  type="text/css"
+              href="../styles/main.css">
+        <link rel="stylesheet"
+			  type="text/css"
+			  href="../styles/contact.css">
+	</head>
+	<body>
+		<div class="main_container">
+            <header>
+                <div class="logo_title" id="top">
+                    <img src="../images/logo.jpg" width="100" height="100"/>
+                    <h1><center>My Company</center></h1>
+                </div>
+              <div class="navbar">
+                <a href="../index.html">Home</a> 
+                <a href="../views/about.html">About Us</a>   
+                <a href="../views/registration.html">Register</a> 
+				<a href="../views/login.html">Login</a>    
+			    <!-- <a href="./views/gallery_pics.html">Gallery</a>  -->
+                    <div class="dropdown">
+                        <button class="dropbtn">Gallery
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                            <a href="../views/pictures.html">Photos</a>
+                            <a href="../views/videos.html">Videos</a>
+                            <a href="../views/image_description.html">Book Store</a>
+                        </div>
+                    </div>  
+                <a href="contactPage.html">Contact Us</a> 
+               </div>
+            </header>
+            <div>
+                <h3>Contact Us Here</h3>
+                <form id="form_container" action="thankyou_contact.html">
+                    <div class="input_container">
+                        <input class="input_field" type="text" pattern="^[a-zA-Z]+$"
+                            title="Only letters no spaces"
+                            placeholder="First Name" name="firstname" required>
+                        <span style="width:10px;"></span>
+                        <input class="input_field" type="text" pattern="^[a-zA-Z]+$"
+                            title="Only letters no spaces"
+                            placeholder="Last Name" name="lastname" required>
+                    </div>
+                    
+                    <div class="input_container">
+                        <i class="fa fa-envelope icon"></i>
+                        <input class="input_field" type="email" 
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                            title="Must be in the email format"
+                            placeholder="Email" name="email" required>
+                    </div>
+                    
+                    <div class="input_container">
+                        <textarea class="input_field" name="messege"  
+                                  rows="10" required>Please enter your message here...
+                        </textarea>
+                    </div>
+                    
+                    <input type="submit" value="Submit">				
+			    </form>
+            </div>
+            <footer>
+                &copy;Copyright My Website. All rights reserved.
+            </footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Selectors Combinators > </title>
+		<style>
+			span{
+				background-color:green;
+			}
+			div > span{
+				background-color:red;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<span> Span #1, in the div
+				<span> 
+					Span #2, in the span which is in the div
+				</span>
+			</span>
+		</div>
+		<span>Spin #3, not in the div at all.</span>
+	</body>
+</html>

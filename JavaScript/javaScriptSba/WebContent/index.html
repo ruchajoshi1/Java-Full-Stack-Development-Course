@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <!-- use of viewport to have device friendly website -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Home</title>
+        <!-- Linking external style sheet -->
+        <link rel="stylesheet"
+              type="text/css"
+              href="./styles/main.css">
+        <!-- internal styling --> 
+        <style>
+        #sale{
+            color:greenyellow;
+            font-size: larger;
+        }
+        td.highlight{
+                background: white;
+                }
+        </style>
+        <!--internal script include jQuery for hover effect-->
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("td").hover(
+                    function(){$(this).addClass("highlight");}, 
+                    function(){$(this).removeClass("highlight");}
+                );
+            });
+        </script>
+    </head>
+    <body>
+        <!-- Main container -->
+        <div class="main_container">
+            <header id="top">
+                <!-- Logo and Title -->
+                <div class="logo">
+                    <img src="./images/logo.jpg" alt="Toystore Logo" width="125" height="125"/>
+                    <h1><center>Toystore</center></h1>
+                </div>
+                <!-- Navigation Menu -->
+                <div class="navbar">
+                    <a href="index.html">Home</a> 
+                    <a href="./views/registration.html">Register</a> 
+                    <a href="./views/login.html">Login</a> 
+                        <!-- Dropdown Menu -->   
+    			        <div class="dropdown">
+                            <button class="dropbutton">Toys Catalog
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown_content">
+                                <a href="./views/ageGroup1.html">Age 0-3</a>
+                                <a href="./views/ageGroup2.html">Age 4-6</a>
+                                <a href="./views/ageGroup3.html">Age 7-10</a>
+                            </div>
+                        </div>  
+                   <a href="./views/aboutUs.html">About Us</a> 
+                   <a href="./views/contactPage.html">Contact Us</a>      
+                </div>
+            </header>
+            <p></p>
+            <!-- Animation box -->
+            <div class="box">
+                Toys on sale!!
+            </div>
+            <p></p>
+            
+            <div>
+                <!--Main Content of a page-->
+                <div id="sale">Toys on Sale!!!</div>
+                <!-- Adding table to list books on sale -->
+                <p></p>
+                <table>
+                    <tr>
+                        <td colspan="2"><img src="./images/ageGroup1/toy1.jpg" alt="Puzzle" width="150" height="150"></td>
+                        <td colspan="2"><img src="./images/ageGroup2/toy1.jpg" alt="Doctor Set" width="150" height="150"></td>
+                        <td colspan="2"><img src="./images/ageGroup3/toy1.jpg" alt="Lego" width="150" height="150"></td>
+                    </tr>
+                    <tr style="color: black;">
+                        <td colspan="2"><h3>Price: $5.99</h3></td>
+                        <td colspan="2"><h3>Price: $9.99</h3></td>
+                        <td colspan="2"><h3>Price: $15.99</h3></td>
+                    </tr>
+                </table>
+                <!-- Adding text -->
+                <p>
+                   <strong>Toys</strong> make up a billion-dollar industry with the 
+                   online market getting its fair share. The number of Americans 
+                   purchasing from online stores for toys or games has consistently 
+                   increased since 2008 and reached its highest record so far in 2016
+                   with almost 44 million.
+                </p>
+                <h4><i>Who are the major toy making companies?</i></h4>
+                <p>
+                   Danish company Lego is the leading toy company to date with its 
+                   peak revenue at 5.49 billion USD. Another American company, Mattel,
+                   follows closely with 5.46 billion USD. Mattel is the company 
+                   behind Barbie, Fisher-Price, Hot Wheels, and UNO to name a few. 
+                   Third is Namko Bandai, the Japanese video game development company
+                   and publisher known for Tekken, Dragonball, Naruto and Pac-Man. 
+                </p>   
+                <p>
+                    Discover the best online toy store for shopping popular toys,
+                    toys for all ages and even the hard to find ones. Search through
+                    our mega list to know what to buy.
+                </p>
+                <p>
+                    This online shop is packed with millions of individual toys. 
+                    Having such a wide variety of options can make decision-making 
+                    hard, and therefore Amazon has numerous filters that customers 
+                    can use to zero-in on their ideal selection. You can also check
+                    their best-selling toys and new releases, which are updated daily,
+                    to have exclusive access to brand-new toys.
+                </p>  
+                <p></p>     
+            </div>
+            <!-- Anchor to the top -->
+            <a href="#top" style="color:black;">Go To Top</a>
+            <p></p>
+            <p></p>
+            <!--Footer of a page -->
+            <footer>
+                &copy;Copyright 2019. All rights are reserved by Toystore
+            </footer>
+        </div>
+    </body>
+</html>

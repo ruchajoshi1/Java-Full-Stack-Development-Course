@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Slide 21 Form with icons</title>
+		<!-- Add icon library -->
+		<link rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet"
+			  type="text/css"
+			  href="../styles/slide21_form.css">
+	</head>
+	<body class="main_body">
+		<div class="blue_container">
+			<form id="form_container">
+				<!--  <h3>Form with Icons</h3> -->
+				<div class="input_container">
+					<i class="fa fa-user icon"></i>
+					<input class="input_field" type="text" pattern="[A-Za-z0-9]{5,20}"
+					 title="must be 5-20 characters long and can contain numbers"
+					 	placeholder="Username" name="username">
+				</div>
+				<div class="input_container">
+					<i class="fa fa-key icon"></i>
+					<input class="input_field" type="password" pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,20}"
+						title="must be 8 - 20 characters long and must have letters, and numbers"
+						placeholder="Choose your password" name="pwd">
+				</div>
+				<div class="input_container">
+					<i class="fa fa-key icon"></i>
+					<input class="input_field" type="password" pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,20}"
+						title="must be 8 - 20 characters long and must have letters, and numbers"
+						placeholder="Confirm password" name="confirmpwd">
+				</div>
+				<div class="input_container">
+					<i class="fa fa-envelope icon"></i>
+					<input class="input_field" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+						title="Must be in the email format"
+						placeholder="Email" name="email">
+				</div>
+				<div class="input_container">
+					<input class="input_field" type="text" pattern="^[a-zA-Z]+$"
+						title="Only letters no spaces"
+						placeholder="First Name" name="firstname">
+					<span style="width:10px;"></span>
+					<input class="input_field" type="text" pattern="^[a-zA-Z]+$"
+						title="Only letters no spaces"
+						placeholder="Last Name" name="lastname">
+				</div>
+				<div class="input_container">
+				<!-- <input type="radio" placeholder="Gender"><br><br> -->
+				<select class="input_field" required>
+					<option value="" disabled selected>Gender</option>
+					<option value="Male">Male</option>
+					<option value="Female">Female</option>
+				</select><br><br>
+				</div>
+				<div class="input_container">
+				<input type="checkbox" required>
+				<label><span class="check_box">I agree with terms and conditions</span></label>
+				</div>
+				<div class="input_container">
+				<input type="checkbox" required>
+				<label><span class="check_box">I want to receive the news and offers</span></label>
+				</div>
+				<input type="submit" value="Sign Up">				
+			</form>
+		</div>		
+	</body>
+</html>

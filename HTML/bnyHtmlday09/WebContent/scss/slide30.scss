@@ -1,0 +1,22 @@
+.flex_container{
+    width: 80%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .flex_item{
+        widows: 100px;
+        height: 100px;
+        text-align:center;
+    }
+
+    @for $i from 1 through 3{
+        .item-#{$i} {order:i}
+    } 
+
+    @each $image in img1, img2, img3, img4{
+        .#{$image}_flex_item{
+            background-image: url('/images/#{$image}.png')
+        }
+    }
+}

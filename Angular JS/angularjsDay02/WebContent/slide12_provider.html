@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 12 provider </title>
+        <script src="js/angular.min.js"></script>
+    </head>
+    <body ng-app="ngApp">
+        <div ng-controller="ctrl">
+            {{studentName}}<br>
+            {{site}}
+        </div>
+        
+        <script>
+           var ngApp = angular.module("ngApp",[]);
+
+           ngApp.provider("student",function(){
+               this.site = ''
+
+               this.$get = function(){
+                   var thisProv = this;
+                   return {
+                       name: function(){
+                           return "Young";
+                       },
+                       site:thisProv.site
+                   }
+               }
+           });
+
+           ngApp.controller('ctrl',function($scope,student){
+               $scope.studentName = student.name();
+               $scope.site = student.site;
+           });
+
+           ngApp.config(function(studentProvider){
+               studentProvider.site = "New York"
+           });
+        </script>
+    </body>
+</html>

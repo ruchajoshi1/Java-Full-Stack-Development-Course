@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>Slide 29 toggle</title>
+    <style>
+            .solidGreen{ border: 2px solid green; }
+            .underlineBlue{ color: blue; text-decoration: underline;}
+    </style>
+  </head>
+  <body>
+    <h2 class= "solidGreen">Modifying Classes</h2>
+    <ul>
+      <li class= "underlineBlue">classList.toggle(): Toggles a class on or off</li>
+      <li>classList.contains(): Checks if class value exists</li>
+      <li class= "solidGreen underlineBlue">classList.remove(): Remove a class value</li>
+    </ul>
+     <script>
+      var ul = document.querySelector('ul');
+      ul.firstElementChild.classList.toggle('underlineBlue');
+      ul.firstElementChild.classList.toggle('underlineBlue');//notice that this was twice Toggles a class on or off
+      ul.previousElementSibling.classList.contains('solidGreen');
+      ul.lastElementChild.classList.remove('solidGreen');
+     </script>
+  </body>
+</html> 

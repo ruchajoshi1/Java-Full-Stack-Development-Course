@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 28 Controller</title>
+        <script src="js/angular.min.js"></script>
+    </head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        How much is the 2019
+        {{ carMake + " " + carModel }} in today's market?        
+    </div>    
+    <script>
+        var app=angular.module("myApp",[]);
+
+        app.controller("myCtrl",function($scope){
+            $scope.carMake = "Audi";
+            $scope.carModel = "Q8";
+        });
+    </script>
+</body>
+</html>

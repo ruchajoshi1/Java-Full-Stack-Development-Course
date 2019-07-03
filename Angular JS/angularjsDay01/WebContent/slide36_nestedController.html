@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 36 nested Controller</title>
+        <script src="js/angular.min.js"></script>
+    </head>
+<body ng-app="myNgApp">
+    <div ng-controller="parentController">
+        Message: {{message}} <!-- parent message-->
+        <div ng-controller="childController">
+            Parent Message: {{message}} <br> <!--child message-->
+            Child Message: {{message}} <!--child message-->
+        </div> 
+        Child Message: {{message}} <!-- parent message-->
+    </div>
+    Message: {{message}} <!-- blank message-->
+    <script>
+        var ngApp = angular.module('myNgApp',[]);
+        ngApp.controller('parentController',function($scope){
+            $scope.message = "This is parent controller";
+        });
+        ngApp.controller('childController',function($scope){
+            $scope.message = "This is child controller";
+        });
+    </script>    
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AngularJs $http.post() Service Response Example</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    </head>
+<body ng-app="httpServiceApp" ng-controller="userController" ng-cloak>
+    <!--Form-->
+    <form name="userForm" ng-submit="createUser()">
+        <h4>Create User</h4>
+        <div>
+            <label>Name:</label>
+            <div>
+                <input type="text" ng-model="user.name" placeholder="Maria.."  required />
+            </div>
+        </div>
+        <div>
+            <label>Email:</label>
+            <div>
+                <input type="email" ng-model="user.email"  placeholder="maria@perschols.org" required />
+            </div>
+        </div>
+        <div>
+            <input type="submit" value="submit" ng-disabled="userForm.$invalid" />
+        </div>
+    </form>
+<!--End Form-->
+<!--Users List-->
+    <br />
+    <h4>Participants List</h4>
+    <table>
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Email</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="user in users">
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        var app = angular.module('httpServiceApp', []);  app.controller('userController', function($scope, $http) {
+        //Create New User
+        $scope.createUser = function() {
+        //$http POST function
+        //to check error message edit the url
+        //$http.post('https://jsonplaceholder.typicode.com/user', $scope.user).then(
+        $http.post('https://jsonplaceholder.typicode.com/users', $scope.user).then(
+            function successCallback(response) {
+            $scope.users.push(response.data);  alert("User has created Successfully")
+            }, function errorCallback(response) {
+            alert("Error. while created user Try Again!");
+            });
+            };
+        //$http GET function
+        $http.get('https://jsonplaceholder.typicode.com/users').then(
+            function successCallback(response) {
+            $scope.users = response.data;
+            }, function errorCallback(response) {  alert("Error. Try Again!");
+            });
+        });
+    </script>
+</body>
+</html>
+

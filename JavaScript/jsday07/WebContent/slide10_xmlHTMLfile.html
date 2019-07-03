@@ -1,0 +1,27 @@
+<html>
+ <head>
+     <title>Slide 10 and 11</title>
+ </head>
+ <body>
+  <button type = "button" id ="button">
+   Making Asynchronous Request to the Webserver</button>
+  <script>
+    var button = document.getElementById("button");
+    button.onclick = makeAsynchronousRequestToWebserver;
+    function makeAsynchronousRequestToWebserver() {
+   //use the code in the previous example of full browser support
+     var request =  new XMLHttpRequest(); 
+     request.onreadystatechange = function() {
+   //The Web server returns the result containing an XML document.  
+      if (request.readyState == 4) {
+        console.log("The readyState at this point is = " +request.readyState); 
+        console.log("see next example to learn how to processes the result")}
+     }
+    console.log("The readyState after open() is = " +request.readyState);
+    request.open("GET", 'http://localhost:8080/jsday07/node.xml');
+    request.send(null);
+    console.log("The readyState after send() is = " +request.readyState);
+   }
+  </script>
+ </body>
+</html>

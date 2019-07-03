@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <!-- use of viewport to have device friendly website -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>About Us</title>
+        <!-- Linking external style sheet -->
+        <link rel="stylesheet"
+              type="text/css"
+              href="../styles/main.css">
+    </head>
+<body>
+    <!-- Main container -->
+        <div class="main_container">
+            <header id="top">
+                <!-- Logo and Title -->
+                <div class="logo">
+                    <img src="../images/logo.jpg" alt="Toystore Logo" width="125" height="125"/>
+                    <h1><center>Toystore</center></h1>
+                </div>
+                <!-- Navigation Menu -->
+                <div class="navbar">
+                    <a href="../index.html">Home</a> 
+                    <a href="../views/registration.html">Register</a> 
+                    <a href="../views/login.html">Login</a> 
+                        <!-- Dropdown Menu -->   
+    			        <div class="dropdown">
+                            <button class="dropbutton">Toys Catalog
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown_content">
+                                <a href="../views/ageGroup1.html">Age 0-3</a>
+                                <a href="../views/ageGroup2.html">Age 4-6</a>
+                                <a href="../views/ageGroup3.html">Age 7-10</a>
+                            </div>
+                        </div>   
+                   <a href="../views/aboutUs.html">About Us</a> 
+                   <a href="../views/contactPage.html">Contact Us</a>      
+                </div>
+            </header>
+            <h3><i>Want to know more about our team? Click below button.</i></h3>  
+            <!-- <button>Click me</button>
+            <p>Discover the best online toy stores for shopping popular toys.</p>
+            <script>
+                    const button = document.querySelector('button');
+                    console.log("inside script");
+                    // Function to modify the text content of the paragraph
+                    const changeText = function(){
+                    const p = document.querySelector('p');
+                    console.log("inside changeText");
+                    p.textContent = "This online shop is packed with millions of individual toys.";
+                    button.textContent="I was clicked";
+                    };
+                    // Listen for click event
+                    button.addEventListener('click', changeText);
+                    //button.click = changeText;
+            </script> --> 
+            <!-- Read an xml file to get employee information -->
+            <button type = "button" id = "button">Know our Team</button>
+        <script>
+                document.getElementById("button").onclick = makeAsynchronousRequestToWebserver;
+                
+                function makeAsynchronousRequestToWebserver() {
+                    var request =  new XMLHttpRequest(); 
+                    request.onreadystatechange = function() {
+                    if (request.readyState == 4) {updatedDOM(request);}}
+                        request.open("GET", 'http://localhost:8080/javaScriptSba/node.xml'); request.send(null);
+                    }
+                
+                function updatedDOM(request) {
+                    var xmlDoc = request.responseXML;//variable to read the xml
+                    var ol = document.createElement("ol");//ordered list of employees
+                    var employees = xmlDoc.getElementsByTagName("Employee");//returns array
+                    for (var i = 0; i < employees.length; i++) {
+                        var li = document.createElement("li");
+                        var employee =employees[i].children;
+                        for (var j = 0; j < employee.length; j++) {
+                            var div = document.createElement("div");
+                            div.textContent= employee[j].tagName + " : "+ employee[j].textContent;
+                            li.appendChild(div);
+                        }
+                    ol.appendChild(li);
+                    }
+                    document.body.appendChild(ol);
+                }
+        </script>
+            <p></p>
+            <!-- Anchor to the top -->
+            <a href="#top" style="color:black;">Go To Top</a>
+            <p></p>
+            <!--Footer of a page -->
+            <footer>
+                &copy;Copyright 2019. All rights are reserved by Toystore
+            </footer>
+        </div>
+</body>
+</html>

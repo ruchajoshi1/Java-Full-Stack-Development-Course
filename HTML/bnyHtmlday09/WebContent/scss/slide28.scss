@@ -1,0 +1,28 @@
+div{
+    margin:0;
+    nav{
+        padding:0;
+        display:flex;
+    }
+}
+.main_container{
+    width:300px;
+    height:300px;
+    $color:null;
+    @if 4==0{
+        background-color:yellow;
+        $color:red;
+    }
+    @else if 4%2==0{
+        background-color:red;
+        $color:red;
+    }
+    @else{
+        background-color:green;
+        $color:green;
+    }
+    @if $color ==red{
+        padding:20px;        
+    }
+    @else{padding:0;}
+}

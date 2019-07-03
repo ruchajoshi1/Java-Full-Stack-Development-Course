@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Home</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var inputString = "****###*******\n******###*****\n**************\n*****####*****\n**************\n**************";
+            console.log(inputString);
+            var counter=0;
+            var counter2=0;
+            for( var i=0; i<inputString.length; i++){
+                if(inputString[i]=="#"){
+                    //counter++; //counts how many # are there in total
+                    counter2++;
+                    console.log("counter2: " + counter2);
+                    if((inputString[i+1]=="*")&& (counter2 >= 4)){
+                        //break;
+                        counter2 = 0;
+                        counter++;// gives how many times there are ### together
+                        //continue;
+                    }else if ((inputString[i+1]=="*")&& (counter2 < 4)){
+                        counter2 = 0;
+                    }
+                }
+            }
+            console.log("Number of times #### occured in string:" + counter);
+        </script>
+    </body>
+</html>

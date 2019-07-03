@@ -1,0 +1,20 @@
+@charset "ISO-8859-1";
+div{
+	text-align: center;
+	border: 2px dashed red;
+	width: 400px;
+	height: 200px;
+}
+
+#div1{
+	background: linear-gradient(to left bottom,blue,pink);
+	float: left;
+}
+#div2{
+	background-color: antiquewhite;
+	float: right;
+}
+#div3{
+	background-color: blueviolet;
+	clear:both;
+}

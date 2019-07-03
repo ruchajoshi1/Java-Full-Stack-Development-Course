@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="ISO-8859-1">
+    <title>Calculation Numbers Assignment Problem 3</title>
+    </head>
+    <body>
+        <!--Write an even better calculator program calc3.html that can 
+            understand squared numbers. We are going to use a simplified 
+            notation X^ to mean x^2. -->
+        <script>
+            var userWidth = prompt("Please enter the equation with + and - operators.");
+            console.log(userWidth);//print the expression
+            var data = userWidth.split(";");
+            console.log(data);
+            for(var i=0;i<data.length;i++){
+                if(data[i]==""){
+                    continue;
+                }else{
+                    var expression = data[i];
+                    for(var j=0; j<expression.length;j++){
+                        if(expression[j]=="^"){
+                            console.log(expression[j]);
+                            expression[j] = "*";
+                            console.log(expression[j]);
+                        }
+                    }
+                        console.log(expression);
+                    }
+                    //console.log(data[i]);}
+                }            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 44 Events </title>
+        <script src="js/angular.min.js"></script>
+    </head>
+<!-- Using function/controller -->
+<body ng-app="myApp">
+    <div ng-controller="myController1">
+         <h1 ng-mousemove="increase()">Mouse Over Me Increasing</h1>
+         <h2>{{counter1}}</h2>
+         <h1 ng-mousemove="decrease()">Mouse Over Me decreasing</h1>
+    </div>
+    <!-- 
+    <div ng-controller="myController2"
+         ng-mousemove="count()">
+         <h1>Mouse Over Me decreasing</h1>
+         <h2>{{counter2}}</h2>
+    </div>
+    -->
+    <script>
+        var ngApp = angular.module('myApp',[]);
+        ngApp.controller('myController1',function($scope){
+            $scope.counter1 = 0;
+             $scope.increase = function(){
+                 return $scope.counter1 = $scope.counter1 + 1;                 
+             }
+             $scope.decrease = function(){
+                 return $scope.counter1 = $scope.counter1 - 1;                 
+             }
+        });
+    /*
+        ngApp.controller('myController2',function($scope){
+            $scope.counter2 = 0;
+             $scope.count = function(){
+                 $scope.counter2 = $scope.counter2 - 1;                 
+             }
+        }); 
+        */
+    </script>
+
+</body>
+<!--
+    Using expression
+    <body ng-app>
+     <div ng-mousemove="count=count+1" ng-init="count=0">
+        <h1>Mouse Over Me!</h1><br>
+        <h2>{{count}}</h2>
+     </div>
+</body>
+-->
+</html>

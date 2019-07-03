@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 35 Controller</title>
+        <script src="js/angular.min.js"></script>
+    </head>
+<body>
+    <div ng-app="myNgApp" ng-controller="personCtrl">
+        First name: <input type="text" ng-model="firstName"> <br>
+        Last name: <input type="text" ng-model="lastName"> <br>
+        <br>
+        Full Name: {{fullName()}}
+    </div>
+    <script>
+        var ngApp = angular.module('myNgApp',[]);
+        ngApp.controller('personCtrl',function($scope){
+           $scope.firstName = "John";
+           $scope.lastName = "Doe";
+           $scope.fullName = function(){
+               return $scope.firstName + " " + $scope.lastName;
+               //return $scope.firstName + " " + $scope.lastName[0]; to get first letter of last name
+           }
+        });
+    </script>    
+</body>
+</html>

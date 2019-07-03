@@ -1,0 +1,31 @@
+<html>
+ <head>
+     <title>Slide 8 Configure XML object</title>
+ </head>
+ <body>
+  <button type = "button" id ="button">Configured XMLHttpRequest Object</button>
+  <script>
+    var button = document.getElementById("button");//returns 1 element
+
+    button.onclick = ConfiguredXMLHttpRequest;//call a function
+    
+    function ConfiguredXMLHttpRequest() {
+        //use the code in the previous example of full browser support
+        var request =  new XMLHttpRequest();
+        //The XMLHttpRequest object calls the callback() function and
+        request.onreadystatechange = function() {
+                            //The Web server returns the result containing an XML document.  
+                                if (request.readyState == 4) { 
+                                    updatedDOM(request); //processes the result
+                                }
+                        }
+    
+    console.log("onreadystatechange calls the callback() function is = "
+    +request.onreadystatechange);
+    
+    console.log("The readyState at this point is = " 
+    +request.readyState);
+ }
+  </script>
+ </body>
+</html>

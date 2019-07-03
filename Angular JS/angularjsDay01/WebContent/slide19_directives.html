@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 18 Directives</title>
+        <script src="js/angular.min.js"></script>
+    </head>
+    <!--myAngularApp is module name, create module in script tag with name-->
+    <body ng-app="myAngularApp">
+        <div>
+            {{2/2}}
+        </div>
+        <div>
+            {{5/2}}
+            <div>
+                {{10/2}}
+            </div>
+        </div>
+        
+        <script>
+            var app = angular.module('myAngularApp',[]);
+        </script>
+    </body>
+</html>

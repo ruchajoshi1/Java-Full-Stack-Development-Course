@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 46 Hands-on </title>
+        <script src="js/angular.min.js"></script>
+    </head>
+<!-- Using function/controller -->
+<body ng-app="myApp">
+    <div ng-controller="myController1">
+         <button ng-click="showMsg(msg)">Click Me!</button>
+         <div ng-show="show==true;">
+             <h1>Menu:</h1>
+             <div>Ford</div>
+             <div>Toyota</div>
+             <div>Nissan</div>
+         </div>
+         <p>Click the button to show/hide the menu.</p>
+    </div>
+    <script>
+        var ngApp = angular.module('myApp',[]);
+        ngApp.controller('myController1',function($scope){
+            $scope.show=false;
+            $scope.showMsg = function(){
+                if ($scope.show==false){
+                $scope.show = true;
+                } else {
+                    $scope.show = false; 
+                }
+            }
+        });
+    </script>
+    <!--another way of doing it without controller -->
+        <button ng-click="v=!v">Click Me!</button>
+        <div ng-show="v;">
+             <h1>Menu:</h1>
+             <div>Ford</div>
+             <div>Toyota</div>
+             <div>Nissan</div>
+         </div>
+         <p>Click the button to show/hide the menu.</p>
+    
+</body>
+</html>

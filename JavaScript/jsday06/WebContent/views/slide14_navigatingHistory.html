@@ -1,0 +1,27 @@
+<html>
+ <head>
+     <title>
+         Slide 14 navigating history
+     </title>
+ </head>
+ <body>
+    <button id="back">back()</button> 
+    <button id="forward">forward()</button>
+    <button id="go">go()</button>
+    <script>
+    var buttons = document.getElementsByTagName("button");
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].onclick = handleButtonPress;
+     }
+    function handleButtonPress(e) {
+     if (e.target.id == "back") {
+      window.history.back();
+     }else if (e.target.id == "forward") {
+      window.history.forward();
+     }else if (e.target.id == "go") {
+      window.history.go(-1);
+     } 
+    }
+   </script>
+ </body>
+</html>

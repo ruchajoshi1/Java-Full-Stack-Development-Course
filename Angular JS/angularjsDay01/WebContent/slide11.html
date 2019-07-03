@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 11</title>
+    </head>
+<body ng-app>
+    <input type="text" ng-model="name" placeholder="Enter your name">
+    <h1>Hello
+        Your name is <span ng-bind="name"></span>
+    </h1>
+    <script src="js/angular.min.js"></script>
+</body>
+</html>
+
+<!--This code can be written in javascript 
+<input type="text" id="inputName" onkeyup="getName()">
+<p>Your Name is<span id="outputName"></span></p>
+<hr>
+
+<script>
+    function getName(){
+        var name= document.getElementById("inputName").value;
+        document.getElementById("outputName").innerHTML = name;
+    }
+</script>
+-->

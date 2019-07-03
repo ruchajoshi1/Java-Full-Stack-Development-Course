@@ -1,0 +1,42 @@
+Toystore - 
+
+Github link - https://github.com/ruchajoshi1/BNY01/tree/master/javaScriptSba 
+
+This is a code for online toy store web site. 
+User can do following things on the web site -
+1. Browse the toy catalog which is separated by age group. See video reviews for the toys.
+2. Register on the web site.
+3. Login on the web site.  
+4. Contact the store manager by submitting contact form.
+5. Know information about employees at the store.
+
+Technical specifications:
+1. HTML - Used to create structure of the web site.
+I used grid system, different HTML tags, tables
+I have implemented forms.
+Web site has dropped Down Menu.
+Used regex validation for forms.
+
+2. CSS - used for styling of the web site.
+I used inline, internal, and external styling.
+I used different CSS selectors.
+I used Flexbox, SASS/SCSS. I have small animation on the web site using CSS.
+
+3.JavaScript - used for form validation using regex. 
+Used AJAX and XML to read XML file which has employee details for about us page.
+Used jQuery for drop down menu in registration form and for hover on Home page.
+
+Web site page details - 
+1. Home page - has header - logo, title, navigation bar, drop down menu, table, 
+   text, hover on the images using mouse event,small animation box, anchor, footer
+2. Registration page - has header - logo, title, navigation bar, form, validation using javascript,
+   drop down menu for gender using jquery,footer
+3. login page - has header - logo, title, navigation bar, form, validation using regex,footer
+   thank you message after submission, forgot password page link.
+4. Toys catalog - this has 3 pages with age 0-3, age 4-6, age 7-10; each one has header - logo,
+   title, navigation bar, used grid to display, added video links
+5. About us page - has header - logo, title, navigation bar,this has button after clicking it 
+   reads employee information and displays on the website, footer
+6. Contact form page - has header - logo, title, navigation bar, form, validation,
+   footer, thank you message after submission
+   

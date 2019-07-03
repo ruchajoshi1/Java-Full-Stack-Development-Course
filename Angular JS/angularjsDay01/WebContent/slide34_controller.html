@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 33 Controller</title>
+        <script src="js/angular.min.js"></script>
+    </head>
+<body ng-app="myNgApp">
+    <div id="div1" ng-controller="myController1">
+        Message: {{message}} <br>
+        <div id="div2">
+            Message:{{message}}
+        </div>
+    </div>
+    <div id="div3">
+        Message: {{message}}
+    </div>
+    <div id="div4" ng-controller="myController2">
+        Message: {{message}}
+    </div>
+    <script>
+        var ngApp = angular.module('myNgApp',[]);
+        ngApp.controller('myController1',function($scope){
+            $scope.message = "This is myController1!";
+        });
+        ngApp.controller('myController2',function($scope){
+            $scope.message = "This is myController2!";
+        });
+    </script>    
+</body>
+</html>

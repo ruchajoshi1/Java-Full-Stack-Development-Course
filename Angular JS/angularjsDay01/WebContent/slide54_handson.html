@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 54 Hands on </title>
+        <script src="js/angular.min.js"></script>
+    </head>
+    <body ng-app="myApp">
+        <div ng-controller="myController">
+            <table>
+                <tr>
+                    <td>Enter first name:</td>
+                    <td> <input type="text" ng-model="fName"></td>
+                </tr>
+                <tr>
+                    <td>Enter last name:</td>
+                    <td><input type="text" ng-model="lName"></td>
+                </tr>
+                <tr>
+                    <td>Enter fees: </td>
+                    <td><input type="text" ng-model="fee"></td>
+                </tr>
+                <tr>
+                    <td>Enter subject: </td>
+                    <td><input type="text" ng-model="modelsubject"></td>
+                </tr>
+                <tr>
+                    <td>Name in Upper Case:</td>
+                    <td>{{fName + " " + lName|uppercase}}</td>
+                </tr>            
+                <tr>
+                    <td>Name in Lower Case:</td>
+                    <td>{{fName + " " + lName|lowercase}}</td>
+                </tr>
+                <tr>
+                    <td>fees:</td>
+                    <td>{{fee|filter|currency:'$':2}}</td>
+                </tr>
+                <tr>
+                    <td>Subjects:</td>
+                    <td>
+                        <ul>
+                            <li ng-repeat="subject in (arrsubjects |filter:{name:modelsubject}) | orderBy:+marks">
+                            {{subject.name + ',marks:' + subject.marks}}</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+       <script>
+           var myApp = angular.module('myApp',[]);
+
+           myApp.controller('myController',function($scope){
+               $scope.arrsubjects = [{name:'Math',marks:'65'},
+                                  {name:'Physics',marks:'70'},
+                                  {name:'Chemistry',marks:'80'}];
+
+                $scope.SortOrder = '+marks';
+           });       
+       </script>
+    </body>
+</html>

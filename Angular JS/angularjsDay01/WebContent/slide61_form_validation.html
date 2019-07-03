@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 61 Form validation </title>
+        <script src="js/angular.min.js"></script>
+    </head>
+    <body ng-app>
+        <p>Try writing an Email address in the input field:</p>
+        <form name="myForm">
+            Email:
+            <input type="email" name="myAddress" ng-model="myEmail">
+            <span ng-show="myForm.myAddress.$error.email">
+                Not a valid email address
+            </span>
+        </form>
+     </body>
+</html>

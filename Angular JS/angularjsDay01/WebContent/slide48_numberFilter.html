@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 18 Directives</title>
+        <script src="js/angular.min.js"></script>
+    </head>
+    <body>
+        <div ng-app="myApp" ng-controller="nCtrl">
+            <h1>{{weight | number : 4}} pounds</h1>
+            <h1>prize {{prize | number}}</h1>
+        </div>
+        <script>
+            var app = angular.module('myApp',[]);
+            app.controller('nCtrl',function($scope){
+                $scope.weight = 1000;
+                $scope.prize = 1000000;
+            })
+        </script>
+
+    </body>
+</html>

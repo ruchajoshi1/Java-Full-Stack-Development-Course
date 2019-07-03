@@ -1,0 +1,38 @@
+<html>   
+<head>
+    <title>Slide 44 Manual Animation</title>
+</head>
+<body>
+  <img id = "myImage" src = "../images/ship.jpg" height= "100px" width = "100px"/>           
+  <div style="text-align:center;width:480px;">
+  <button id= "KeyA">UP</button><br><br>
+  <button id= "KeyW">LEFT</button>
+  <button id = "KeyD">RIGHT</button><br><br>
+  <button id= "KeyS">DOWN</button>
+ </div>          
+</body> 
+  <script>
+   const buttons = document.querySelectorAll('button');
+   for(var i=0; i< buttons.length;i++){
+        buttons[i].addEventListener('mouseenter', function() {changeToCoral(event.target);});
+        buttons[i].addEventListener('mouseleave', function() {backToNormal(event.target);});
+        buttons[i].addEventListener('click',function() {moveImage(event.target.id);});
+    }
+    function changeToCoral(eventTarget){eventTarget.style.backgroundColor= 'coral';};
+    function backToNormal(eventTarget){ eventTarget.style.backgroundColor= '';};
+        
+    function moveImage(direction) {  
+        if(direction==='KeyD'){imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';};
+        if(direction==='KeyW'){imgObj.style.left = parseInt(imgObj.style.left) - 10 + 'px';};
+        if(direction==='KeyA'){imgObj.style.top = parseInt(imgObj.style.top) - 10 + 'px';};
+        if(direction==='KeyS'){imgObj.style.top = parseInt(imgObj.style.top) + 10 + 'px';};
+    };
+
+    function init() {
+      imgObj = document.getElementById('myImage');
+      imgObj.style.position= 'relative';  
+      imgObj.style.left = '0px'; imgObj.style.top = '0px';
+    };
+      window.onload = init;
+   </script>
+</html>

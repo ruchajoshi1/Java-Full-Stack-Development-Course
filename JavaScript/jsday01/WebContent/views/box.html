@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Print Box</title>
+    </head>
+    <body>
+        <!-- Write a program box.html that asks the user to input width and height 
+            and prints a solid rectangular box of the requested size using 
+            asterisks.Also, print a line Shape: between user input and the printed 
+            shape (to separate input from output).-->
+        <script>
+            var userWidth = prompt("Please enter width of the box.");
+            var userHeight = prompt("Please enter height of the box.");  
+            var box = "";  
+            for(var j=0; j<userHeight; j++){
+                for (var i = 0; i<userWidth; i++){
+                    box += "*";
+                }
+                box = box + "\n";
+            }
+            console.log("Shape: " + "\n");
+            console.log(box);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 67 Form validation Hands On </title>
+        <script src="js/angular.min.js"></script>
+    </head>
+    <body ng-app="myApp" ng-controller="studentController">
+        <table style="border:'1'">
+            <tr>
+                <td><h3>Name of a Book</h3></td>
+                <td><h3>Picture</h3></td>
+                <td></td>
+                <td><h3>Price</h3></td>
+                <td></td>
+                <td><h3>Quantity</h3></td>
+                <td><h3>Total Price</h3></td>
+            </tr>
+            <tr ng-repeat="book in books">
+                <td>{{book.name}}</td>
+                <td><img src="{{book.img}}" width="150" height="200"></td>
+                <td></td>
+                <td>{{book.price}}</td>
+                <td></td>
+                <td>
+                    {{book.qty}}<br>
+                    <button ng-click="add(book)">Add</button>
+                    <button ng-click="remove(book)">Remove</button>
+                </td>
+                <td>{{totalPrice}}</td>
+            </tr>
+        </table>
+        <script>
+            var app = angular.module("myApp",[]);
+            app.controller('studentController',function($scope,$window){
+                $scope.books = [
+                    {name:"The Game of Thrones",img:'./images/fbook1.jpg',price:'$15.99',qty:'0'},
+                    {name:"Prince of Thrones",img:'./images/fbook2.jpg',price:'$19.99',qty:'0'},
+                    {name:"Divergent",img:'./images/fbook3.jpg',price:'$25.00',qty:'0'},
+                    {name:"The Hunger Games",img:'./images/fbook4.jpg',price:'$17.99',qty:'0'},
+                    {name:"The Hunger Games Triology",img:'./images/fbook5.jpg',price:'$24.99',qty:'0'}
+                ];
+                $scope.totalPrice = 0;
+                $scope.add = function(book){
+                     $scope.books.qty ++;
+                };
+                $scope.remove = function(book){
+                    return $scope.books.qty --;
+                };
+            });
+        </script>
+     </body>
+</html>

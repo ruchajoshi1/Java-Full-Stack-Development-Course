@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+    <form name = "regForm" onSubmit = "return regformValidation();">
+<h4> Registration Page </h4>
+<div class="input-container">
+<input class="input-field" id="name" type="text" placeholder="Enter your username">
+<!-- autofocus required
+pattern ="(?=^.{5,8}$)(?=.*[A-Za-z0-9\W+]).*$"> -->
+</div>
+<br/>
+<div class="input-container">
+<input class="input-field" id = "pwd" type="password" placeholder="Enter your password">
+<!--required 
+pattern ="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"> -->
+</div>
+<br/>
+<div class="input-container">
+<input class="input-field" id = "cfmpwd" type="password" placeholder="Confirm password">
+<!-- required 
+pattern ="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"> -->
+</div>
+<br/>
+<button class="btn" type="submit">Register</button>
+
+</form>
+</div>
+<footer>
+&copy; Copyrights 2019, All rights reserved
+</footer>
+</div> <!-- Closing the main div-->
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type ="text/javascript">
+
+function regformValidation(){
+var formName = document.forms["regForm"]["name"];
+var pwd = document.forms["regForm"]["pwd"];
+var cfmpwd = document.forms["regForm"]["cfmpwd"];
+if (formName.value == ""){
+alert("please enter your username");
+formName.focus();
+formName.style.background = "yellow";
+return false;
+}
+var re = /((?=.*[a-z])|(?=.*[A-Z])).{6,}/;
+// var re = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
+if (!re.test(formName.value)){
+alert("Username must be of atleast 6 characters long ");
+formName.focus();
+formName.style.background = "yellow";
+return false;
+}else {
+formName.style.background = "";
+}
+
+var pwdre = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])((?=.*\W+)|(?=.*_)).{8,}/;
+if (pwd.value == ""){
+alert("Please enter your password");
+pwd.focus();
+pwd.style.background = "yellow";
+return false;
+}else{
+pwd.style.background = "";
+}
+
+if(!pwdre.test(pwd.value)){
+alert("Password must be of atleast 8 characters long and must contain atleast one lowercase, one uppercase,one digit and one alphanumeric characters");
+pwd.focus();
+pwd.style.background = "yellow";
+return false;
+}else {
+pwd.style.background = "";
+}
+
+
+if (cfmpwd.value != pwd.value){
+alert ("Password doesnt match");
+cfmpwd.focus();
+cfmpwd.style.background = "yellow";
+return false;
+} else {
+cfmpwd.style.background = "";
+}
+}// closing the function regformValidation()
+
+
+$(document).ready(function(){
+$("a").hover(function(){
+$(this).addClass("highlight");
+}, function(){
+$(this).removeClass("highlight");
+});
+});
+
+
+</script>
+
+</body>
+</html>

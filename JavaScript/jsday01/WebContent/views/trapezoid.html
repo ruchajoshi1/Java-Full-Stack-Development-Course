@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Print Trapezoid</title>
+    </head>
+  <body>
+    <!--
+        Write a program trapezoid.html that prints an upside-down trapezoid of 
+        given width and height.However, if the input height is impossibly large 
+        for the given width, then the program should report, Impossible shape!
+    -->
+    <script>
+            var userWidth = prompt("Please enter width of the box.");
+            var userHeight = prompt("Please enter height of the box.");  
+            var box = "";
+            var spaces= 0;
+            var stars=userWidth;
+            if((userWidth/2) <= userHeight){
+                console.log("Impossible Shape!!");
+            }else{
+            for(var j=0; j<userHeight; j++){
+                for (var i = 0; i<userWidth; i++){
+                   if(i<j || (i+j)>= userWidth){
+                    box += " ";
+                    }else{box += "*";}
+                }
+                box = box + "\n";
+            }
+            console.log("Shape: " + "\n");
+            console.log(box);
+            }
+    </script>
+  </body>
+</html>

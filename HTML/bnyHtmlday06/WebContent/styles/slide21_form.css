@@ -1,0 +1,48 @@
+@charset "ISO-8859-1";
+.main_body {
+	background-color: white;
+}
+
+.blue_container {
+	width: 400px;
+	height: 500px;
+	background-color: blue;
+	margin: 0px auto;
+}
+
+#form_container {
+	padding: 30px;
+	/*margin-left:50px;*/
+	/* text-align: center;*/
+}
+
+.input_container {
+	width: 100%;
+	display: flex;
+	margin-bottom: 15px;
+	/* border:0px; */
+}
+
+.icon {
+	padding: 7px;
+	background: white;
+	color: dodgerblue;
+	min-width: 30px;
+	text-align: center;
+	border: 0px;
+}
+
+.input_field {
+	width: 100%;
+	padding: 10px;
+	outline: none;
+	border: 0px;
+}
+
+.input_container:focus {
+	border: 2px;
+}
+.check_box{
+	color:white; 
+	font-size:12px;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 55 Custom Filter Hands on </title>
+        <script src="js/angular.min.js"></script>
+    </head>
+    <body>
+        <div ng-app="myApp" ng-controller="myController">
+            Enter a positive integer:<input type="number" ng-model="n">
+            <div ng-show="isValid(n)">The Ordinal Form: {{n| ordFilter}}</div>
+            <div ng-show="!isValid(n)">Invalid Input!! You entered {{n}}</div>
+        </div>
+       <script>
+           var myApp = angular.module('myApp',[]);
+            myApp.filter('ordFilter',function(){
+                return function(n){
+                    if (n%10===1 && n%100!=11){
+                        return n+'st';
+                    } else if(n%10===2 && n%100 !=12){
+                        return n+'nd';
+                    }else if(n%10===3 && n%100 != 13){
+                        return n+'rd';
+                    }else{
+                        return n+'th';
+                    }
+                }
+            });
+
+           myApp.controller('myController',function($scope){
+               $scope.n=1;
+               $scope.isValid = function(n){
+                   if(angular.isNumber(n)&& n>0 && n%1===0){
+                       return true;
+                    }
+                    return false;
+               }
+           });       
+       </script>
+    </body>
+</html>

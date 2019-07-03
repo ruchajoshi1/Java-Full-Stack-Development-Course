@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+    <script>
+        var myWindow;
+        function newWindow() {
+        myWindow = window.open("https://perscholas.org/","perscholas", 
+        "width=400, height=200, resizable=yes, scrollbars=yes, location=yes, toolbar=yes, menubar=yes");
+        myWindow.focus();//Makes a request to bring the window to the front
+        }
+        console.log("Protocol",window.location.protocol);
+        console.log("host",window.location.host);
+        console.log("hash",window.location.hash);
+        console.log("href",window.location.href);
+        console.log("pathname",window.location.pathname);
+        console.log("port",window.location.port);
+        console.log("search",window.location.search);
+        function closeWindow(){
+        myWindow.close();
+        }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 52 filter Filter </title>
+        <script src="js/angular.min.js"></script>
+    </head>
+    <!-- Search box not case sensitive -->
+    <body ng-app="myApp">
+        <div ng-controller="myController">
+            Enter name to search: <input type="text" ng-model="searchCriteria"> <br>
+            Result: {{myArr | filter:searchCriteria}}
+        </div>
+       <script>
+           var myApp = angular.module('myApp',[])
+
+           myApp.controller("myController", function($scope){
+               $scope.myArr = ['Steve','Anna','James','Rob','Maria','Lucy'];
+           });
+       </script>
+    </body>
+</html>

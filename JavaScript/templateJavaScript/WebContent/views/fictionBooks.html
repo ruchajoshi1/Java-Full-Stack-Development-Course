@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Fiction Books</title>
+        <link rel="stylesheet"
+              type="text/css"
+              href="../styles/main.css">
+        <link rel="stylesheet"
+              type="text/css"
+              href="../styles/booksCatalog.css">
+    </head>
+    <body>
+        <!-- Main container -->
+        <div class="main_container">
+            <header id="top">
+                <!-- Logo and Title -->
+                <div class="logo">
+                    <img src="../images/logo.jpeg" alt="Bookstore Logo" width="125" height="125"/>
+                    <h1><center>RJ's Bookstore</center></h1>
+                </div>
+                <!-- Navigation Menu -->
+                <div class="navbar">
+                    <a href="../index.html">Home</a> 
+                    <a href="registration.html">Register</a> 
+                    <a href="login.html">Login</a> 
+                        <!-- Dropdown Menu -->   
+    			        <div class="dropdown">
+                            <button class="dropbutton">Book Catalog
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown_content">
+                                <a href="kidsBooks.html">Kids</a>
+                                <a href="fictionBooks.html">Fiction</a>
+                                <a href="nonFiction.html">Non Fiction</a>
+                            </div>
+                        </div>   
+                   <a href="contactPage.html">Contact Us</a>      
+                </div>
+            </header>
+            <div>
+                <!--Fiction Book list created using grid-->               
+                    <div class="column">
+                        <div class="one">
+                            <h4>Prince of Thrones</h4>
+                            <img src="../images/fiction/fbook2.jpg" alt="Prince of Thrones" width="150" height="200">
+                            <h4>Price: $7.99</h4>                            
+                        </div>
+                        <div class="two">
+                            <h4>Divergent</h4>
+                            <img src="../images/fiction/fbook3.jpg" alt="Divergent" width="150" height="200">
+                            <h4>Price: $9.99</h4>
+                        </div>                        
+                    </div>
+                    <div class="column">
+                        <div class="three">
+                            <h4>The Hunger Games</h4>
+                            <img src="../images/fiction/fbook4.jpg" alt="The Hunger Games" width="150" height="200">
+                            <h4>Price: $11.99</h4>
+                        </div>                   
+                        <div class="four">
+                            <h4>The Hunger Games Triology</h4>
+                            <img src="../images/fiction/fbook5.jpg" alt="The Hunger Games Triology" width="150" height="200">
+                            <h4>Price: $13.50</h4>
+                        </div>
+                    </div>   
+                    <p></p>
+                    <h4>Check below video for The Hunger Games book review:</h4>
+                    <iframe width="300" height="200" 
+                            src="https://www.youtube.com/embed/DxDv6bu2lDw" frameborder="0" 
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; 
+                            picture-in-picture" allowfullscreen>
+                    </iframe>          
+            </div>
+            <p></p>
+            <!-- Anchor to the top -->
+            <a href="#top" style="color:black;">Go To Top</a>
+            <p></p>
+            <!--Footer of a page -->
+            <footer>
+                &copy;Copyright 2019. All rights are reserved by RJ's Bookstore
+            </footer>
+        </div>
+    </body>
+</html>

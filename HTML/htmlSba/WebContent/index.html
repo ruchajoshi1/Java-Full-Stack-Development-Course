@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <!-- use of viewport to have device friendly website -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Home</title>
+        <!-- Linking external style sheet -->
+        <link rel="stylesheet"
+              type="text/css"
+              href="./styles/main.css">
+        <!-- internal styling --> 
+        <style>
+        #sale{
+            color:red;
+            font-size: larger;
+        }
+        </style>
+    </head>
+    <body>
+        <!-- Main container -->
+        <div class="main_container">
+            <header id="top">
+                <!-- Logo and Title -->
+                <div class="logo">
+                    <img src="./images/logo.jpeg" alt="Bookstore Logo" width="125" height="125"/>
+                    <h1><center>RJ's Bookstore</center></h1>
+                </div>
+                <!-- Navigation Menu -->
+                <div class="navbar">
+                    <a href="index.html">Home</a> 
+                    <a href="./views/registration.html">Register</a> 
+                    <a href="./views/login.html">Login</a> 
+                        <!-- Dropdown Menu -->   
+    			        <div class="dropdown">
+                            <button class="dropbutton">Book Catalog
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown_content">
+                                <a href="./views/kidsBooks.html">Kids</a>
+                                <a href="./views/fictionBooks.html">Fiction</a>
+                                <a href="./views/nonFiction.html">Non Fiction</a>
+                            </div>
+                        </div>   
+                   <a href="./views/contactPage.html">Contact Us</a>      
+                </div>
+            </header>
+            <p></p>
+            <div class="box">
+                RJ's Bookstore
+            </div>
+            <p></p>
+            
+            <div>
+                <!--Main Content of a page-->
+                <div id="sale">Books on Sale!!!</div>
+                <!-- Adding table to list books on sale -->
+                <p></p>
+                <table>
+                    <tr>
+                        <td colspan="2"><img src="./images/kids/book1.jpg" alt="GoodNight Moon" width="150" height="150"></td>
+                        <td colspan="2"><img src="./images/fiction/fbook1.jpg" alt="Game of Thrones" width="150" height="150"></td>
+                        <td colspan="2"><img src="./images/nonfiction/nfbook6.jpg" alt="Catching Fire" width="150" height="150"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><h3>Price: $3.99</h3></td>
+                        <td colspan="2"><h3>Price: $7.99</h3></td>
+                        <td colspan="2"><h3>Price: $11.99</h3></td>
+                    </tr>
+                </table>
+                <!-- Adding text -->
+                <p>
+                   <strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry.
+                   Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                   when an unknown printer took a galley of type and scrambled it to make a type 
+                   specimen book. It has survived not only five centuries, but also the leap into
+                   electronic typesetting, remaining essentially unchanged. It was popularised 
+                   in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+                   and more recently with desktop publishing software like Aldus PageMaker including
+                   versions of Lorem Ipsum.
+                </p>
+                <h4><i>Where does it come from?</i></h4>
+                <p>
+                    Contrary to popular belief, Lorem Ipsum is not simply random text. 
+                    It has roots in a piece of classical Latin literature from 45 BC, making 
+                    it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney
+                    College in Virginia, looked up one of the more obscure Latin words, consectetur,
+                    from a Lorem Ipsum passage, and going through the cites of the word in classical
+                    literature, discovered the undoubtable source. Lorem Ipsum comes from sections 
+                    1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good 
+                    and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of
+                    ethics, very popular during the Renaissance. The first line of Lorem Ipsum, 
+                    "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+                </p>                
+            </div>
+            <!-- Anchor to the top -->
+            <a href="#top" style="color:black;">Go To Top</a>
+            <p></p>
+            <!--Footer of a page -->
+            <footer>
+                &copy;Copyright 2019. All rights are reserved by RJ's Bookstore
+            </footer>
+        </div>
+    </body>
+</html>

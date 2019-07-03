@@ -1,0 +1,30 @@
+<html> 
+ <head>
+     <title>Slide 16 </title>
+ </head> 
+  <body> 
+  <h3>Determining the Platform</h3> <p id="myP"></p>
+  <input type="button" value="Which Platform?" id="btnPlatform">
+   <script> 
+   var p = document.getElementById("myP");
+   function whichPlatform(){
+     var OS = navigator.platform.toLowerCase();
+     if (OS.indexOf("win") != -1) {
+    p.textContent= "You are running Windows OS."; }
+     else if (OS.indexOf("mac") != -1) {
+       p.textContent="You are running Mac OS"; }
+     else if (OS.indexOf("unix") != -1) {
+       p.textContent="You are running Unix OS"; }
+     else if (OS.indexOf("linux") != -1) {
+       p.textContent="You are running Linux OS"; }
+     else {
+       p.textContent="Please buy a computer";}
+   }
+   function init() {
+    var btnPlatform = document.getElementById("btnPlatform");
+    btnPlatform.onclick = whichPlatform;
+   }
+   window.onload = init;
+   </script> 
+  </body> 
+ </html>

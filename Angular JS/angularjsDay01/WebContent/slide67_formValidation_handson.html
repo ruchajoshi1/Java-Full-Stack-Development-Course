@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Slide 67 Form validation Hands On </title>
+        <script src="js/angular.min.js"></script>
+    </head>
+    <body ng-app="myApp" ng-controller="studentController">
+        <h1>Student Form</h1>
+        <form name="myForm" ng-submit="submitStudentForm(newStudent)">
+            <p>Enter id Number :
+                <input type="number" name="myId" ng-model="newStudent.id" required>
+                <span ng-show="myForm.myId.$touched && myForm.myId.$invalid">
+                    The id is required.
+                </span>
+            </p>
+            <p>Enter name : :
+                <input type="text" name="name" ng-model="newStudent.name" required>
+                <span ng-show="myForm.name.$touched && myForm.name.$invalid">
+                    The name is required.
+                </span>
+            </p>
+            <p>Enter email :
+                <input type="email" name="email" ng-model="newStudent.email" required>
+                <span ng-show="myForm.email.$error.email">
+                    Invalid email!
+                </span>
+            </p>
+            <button type="submit">Submit</button>
+            <br>
+            <button type="button" ng-click="resetForm()">Reset</button><br>
+            New Student: {{newStudent}}
+        </form>
+
+        <script>
+            var app = angular.module("myApp",[]);
+            app.controller('studentController',function($scope,$window){
+                $scope.originalStudent = {
+                    id:1,
+                    name:'James Gosling',
+                    email:'jgosling@java.org'
+                }
+                /*$scope.newStudent = {
+                    id:1,
+                    name:'James Gosling',
+                    email:'jgosling@java.org'
+                }*/
+                /*$scope.newStudent = {
+                    id:$scope.originalStudent.id,
+                    name:$scope.originalStudent.name
+                    email:$scope.originalStudent.email
+                }*/
+                $scope.newStudent = angular.copy($scope.originalStudent);
+                $scope.submitStudentForm = function(value){
+                    $window.alert(value.id + "\n" + value.name + "\n" + value.email);
+                }
+                /* its using $scope so no need to pass any value or object
+                $scope.submitStudentForm = function(){
+                    alert("id:" + $scope.newStudent.id + "\n" +
+                          "name:" + $scope.newStudent.name + "\n" +
+                          "email" + $scope.newStudent.email);
+                }
+                */
+                $scope.resetForm = function(){
+                    $scope.newStudent = angular.copy($scope.originalStudent);
+                }
+            });
+        </script>
+     </body>
+</html>
